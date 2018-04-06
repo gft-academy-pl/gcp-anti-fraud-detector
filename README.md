@@ -14,6 +14,8 @@
 
 ## Documentation
 
-### Dataflow
+### Dataflow (detecting frauds)
 * https://cloud.google.com/dataflow/docs
+* https://en.wikipedia.org/wiki/Data_analysis_techniques_for_fraud_detection
+* https://arxiv.org/ftp/arxiv/papers/1009/1009.6119.pdf
 
