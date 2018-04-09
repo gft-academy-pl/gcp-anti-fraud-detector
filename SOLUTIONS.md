@@ -1,5 +1,4 @@
 ## Storage 
- - for dataflow project files
  - for fraud detector data input
  - for fraud detector data output
 
@@ -12,7 +11,6 @@
 **Answer**
 
 ```
-gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-staging/
 gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-input/
 gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
 ```
@@ -25,12 +23,12 @@ gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
 **Answer**
 
 ```
-gsutil cp trades.csv gs://gft-academy-fraud-detector-input
+gsutil cp gs://gft-academy-fraud-detector-public-data/trades.csv gs://gft-academy-fraud-detector-input/
 ```
 
 ## Antifraud ETL
 
-### Create bootstrap project
+### Create DataFlow bootstrap project
 
 **Docs**
 - https://cloud.google.com/dataflow/docs
@@ -39,14 +37,46 @@ gsutil cp trades.csv gs://gft-academy-fraud-detector-input
 
 **Answer**
 
+Create project from MavenArchetype:
+
 ```
 mvn archetype:generate \
       -DarchetypeArtifactId=google-cloud-dataflow-java-archetypes-examples \
       -DarchetypeGroupId=com.google.cloud.dataflow \
-      -DarchetypeVersion=1.9.1 \
+      -DarchetypeVersion=2.4.0 \
       -DgroupId=com.gft.academy \
       -DartifactId=gcp-anti-fraud-detector \
       -Dversion="0.1" \
       -DinteractiveMode=false \
       -Dpackage=com.gft.academy
+```
+
+Run sample flow on public dataset:
+
+```
+mvn compile exec:java \
+      -Dexec.mainClass=com.gft.academy.WordCount \
+      -Dexec.args="--output=./output/"
+```
+
+### Run an Example Pipeline on the Cloud Dataflow Service ###
+
+**Answer**
+
+```
+ mvn compile exec:java \
+      -Dexec.mainClass=com.gft.academy.WordCount \
+      -Dexec.args="--project=<my-cloud-project> \
+      --stagingLocation=gs://gft-academy-fraud-detector-output/staging/ \
+      --inputFile=gs://gft-academy-fraud-detector-input/trades.csv \
+      --output=gs://gft-academy-fraud-detector-output/output \
+      --runner=DataflowRunner"
+```
+
+### Create own Pipeline to find the frauds ###
+
+**Answer**
+
+```
+
 ```
