@@ -33,6 +33,10 @@ gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
 - https://cloud.google.com/dataflow/docs
 - https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-maven
 
+If you want to execute pipeline on the DataFlow you need to:
+ 1. install gsutils locally
+ 2. authenticate with command: ```gcloud auth login```
+
 <details><summary><b>Answer</b></summary>
 <pre><code>mvn archetype:generate \
       -DarchetypeArtifactId=google-cloud-dataflow-java-archetypes-examples \
@@ -55,7 +59,7 @@ mvn compile exec:java \
       -Dexec.args="--output=./output/"
 ```
 
-### Run an Example Pipeline on the Cloud Dataflow Service ###
+### Run an Example Pipeline on the Cloud DataFlow Service ###
 
 <details><summary><b>Answer</b></summary>
 <pre><code>mvn compile exec:java \
