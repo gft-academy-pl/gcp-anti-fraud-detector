@@ -60,7 +60,7 @@ If you want to execute pipeline on the DataFlow you need to:
 <details><summary><b>Answer</b></summary>
 <pre><code>mvn compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
-      -Dexec.args="--project=<my-cloud-project> \
+      -Dexec.args="--project=&lt;my-cloud-project&gt; \
       --stagingLocation=gs://gft-academy-fraud-detector-output/staging/ \
       --inputFile=gs://gft-academy-fraud-detector-input/trades-small.csv \
       --output=gs://gft-academy-fraud-detector-output/output \
@@ -296,6 +296,6 @@ public class FraudDetectorTest {
 <h4>Run on the DataFlow</h4>
 <pre><code>mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.FraudDetector \
-      -Dexec.args="--output=./target/frauds/ --runner=DataflowRunner --project=<my-cloud-project>"
+      -Dexec.args="--output=./target/frauds/ --runner=DataflowRunner --project=&lt;my-cloud-project&gt;"
 </code></pre>
 </details>
