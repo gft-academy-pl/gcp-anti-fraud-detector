@@ -63,6 +63,7 @@ If you want to execute pipeline on the DataFlow you need to:
       --output=gs://gft-academy-fraud-detector-output/output \
       --runner=DataflowRunner"
 </code></pre>
+</details>
 
 ### Create own Pipeline to find the frauds ###
 
