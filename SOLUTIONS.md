@@ -8,7 +8,7 @@
 - gsutils mb: https://cloud.google.com/storage/docs/gsutil/commands/mb 
 - bucket locations: https://cloud.google.com/storage/docs/bucket-locations
 
-<details><summary>Answer</summary>
+<details><summary><b>Answer</b></summary>
 <pre><code>gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-input/
 gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
 </code></pre>
@@ -20,11 +20,10 @@ gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
 **Docs**
 - gsutils cp: https://cloud.google.com/storage/docs/gsutil/commands/cp
 
-**Answer**
-
-```
-gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://gft-academy-fraud-detector-input/
-```
+<details><summary><b>Answer</b></summary>
+<pre><code>gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://gft-academy-fraud-detector-input/
+</code></pre>
+</details>
 
 ## Antifraud ETL
 
@@ -34,13 +33,8 @@ gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://gft-
 - https://cloud.google.com/dataflow/docs
 - https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-maven
 
-
-**Answer**
-
-Create project from MavenArchetype:
-
-```
-mvn archetype:generate \
+<details><summary><b>Answer</b></summary>
+<pre><code>mvn archetype:generate \
       -DarchetypeArtifactId=google-cloud-dataflow-java-archetypes-examples \
       -DarchetypeGroupId=com.google.cloud.dataflow \
       -DarchetypeVersion=2.4.0 \
@@ -48,8 +42,10 @@ mvn archetype:generate \
       -DartifactId=gcp-anti-fraud-detector \
       -Dversion="0.1" \
       -DinteractiveMode=false \
-      -Dpackage=com.gft.academy
-```
+      -Dpackage=com.gft.academy</code></pre>
+</details>
+
+Create project from MavenArchetype:
 
 Run sample flow on public dataset:
 
@@ -61,24 +57,21 @@ mvn compile exec:java \
 
 ### Run an Example Pipeline on the Cloud Dataflow Service ###
 
-**Answer**
-
-```
- mvn compile exec:java \
+<details><summary><b>Answer</b></summary>
+<pre><code>mvn compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
       -Dexec.args="--project=<my-cloud-project> \
       --stagingLocation=gs://gft-academy-fraud-detector-output/staging/ \
       --inputFile=gs://gft-academy-fraud-detector-input/trades-small.csv \
       --output=gs://gft-academy-fraud-detector-output/output \
       --runner=DataflowRunner"
-```
+</code></pre>
+</details>
 
 ### Create own Pipeline to find the frauds ###
 
-**Answer**
-
-```
-package com.gft.academy;
+<details><summary><b>Answer</b></summary>
+<pre><code>package com.gft.academy;
 
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
@@ -184,13 +177,13 @@ public class FraudDetector {
     }
 
 }
-
-```
+</code></pre>
+</details>
 
 And test:
 
-```
-package com.gft.academy;
+<details><summary><b>Answer</b></summary>
+<pre><code>package com.gft.academy;
 
 import org.apache.beam.sdk.coders.StringUtf8Coder;
 import org.apache.beam.sdk.testing.PAssert;
@@ -292,5 +285,5 @@ public class FraudDetectorTest {
 
     }
 }
-```
-
+</code></pre>
+</details>
