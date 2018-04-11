@@ -71,14 +71,14 @@ If you want to execute pipeline on the DataFlow you need to:
 ### Create own Pipeline to find the frauds ###
 
 <details><summary><b>Answer</b></summary>
- <h2>Implementation:</h2>
- ```
+ <h4>Implementation</h4>
+ 
 <pre><code>package com.gft.academy;
 
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
-import org.apache.beam.sdk.options.*;
-import org.apache.beam.sdk.transforms.*;
+import org.apache.beam.sdk.options.\*;
+import org.apache.beam.sdk.transforms.\*;
 import org.apache.beam.sdk.values.KV;
 import org.apache.beam.sdk.values.PCollection;
 import org.apache.beam.sdk.values.TypeDescriptors;
@@ -180,9 +180,8 @@ public class FraudDetector {
 
 }
 </code></pre>
-```
 
-<h2>Test:</h2>
+<h4>Test</h4>
 
 <pre><code>package com.gft.academy;
 
