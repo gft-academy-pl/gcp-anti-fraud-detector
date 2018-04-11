@@ -72,6 +72,7 @@ If you want to execute pipeline on the DataFlow you need to:
 
 <details><summary><b>Answer</b></summary>
  <h2>Implementation:</h2>
+ ```
 <pre><code>package com.gft.academy;
 
 import org.apache.beam.sdk.Pipeline;
@@ -179,8 +180,9 @@ public class FraudDetector {
 
 }
 </code></pre>
+```
 
-<h2>Test:<h2>
+<h2>Test:</h2>
 
 <pre><code>package com.gft.academy;
 
