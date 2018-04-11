@@ -47,17 +47,13 @@ If you want to execute pipeline on the DataFlow you need to:
       -Dversion="0.1" \
       -DinteractiveMode=false \
       -Dpackage=com.gft.academy</code></pre>
-</details>
-
-Create project from MavenArchetype:
-
-Run sample flow on public dataset:
-
-```
-mvn compile exec:java \
+ 
+<p>Run sample flow on public dataset:</p>
+<pre><code>mvn compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
       -Dexec.args="--output=./output/"
-```
+</code></pre>
+</details>
 
 ### Run an Example Pipeline on the Cloud DataFlow Service ###
 
