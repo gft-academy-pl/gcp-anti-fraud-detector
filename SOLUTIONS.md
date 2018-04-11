@@ -23,7 +23,7 @@ gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
 **Answer**
 
 ```
-gsutil cp gs://gft-academy-fraud-detector-public-data/trades.csv gs://gft-academy-fraud-detector-input/
+gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://gft-academy-fraud-detector-input/
 ```
 
 ## Antifraud ETL
@@ -68,7 +68,7 @@ mvn compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
       -Dexec.args="--project=<my-cloud-project> \
       --stagingLocation=gs://gft-academy-fraud-detector-output/staging/ \
-      --inputFile=gs://gft-academy-fraud-detector-input/trades.csv \
+      --inputFile=gs://gft-academy-fraud-detector-input/trades-small.csv \
       --output=gs://gft-academy-fraud-detector-output/output \
       --runner=DataflowRunner"
 ```
