@@ -9,8 +9,7 @@
 - bucket locations: https://cloud.google.com/storage/docs/bucket-locations
 
 <details><summary>Answer</summary>
-<pre><code>
-gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-input/
+<pre><code>gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-input/
 gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
 </code></pre>
 </details>
