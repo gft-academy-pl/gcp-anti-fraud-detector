@@ -286,4 +286,16 @@ public class FraudDetectorTest {
     }
 }
 </code></pre>
+
+<h4>Run locally</h4>
+<pre><code>mvn clean compile exec:java \
+      -Dexec.mainClass=com.gft.academy.FraudDetector \
+      -Dexec.args="--output=./target/frauds/"
+</code></pre>
+
+<h4>Run on the DataFlow</h4>
+<pre><code>mvn clean compile exec:java \
+      -Dexec.mainClass=com.gft.academy.FraudDetector \
+      -Dexec.args="--output=./target/frauds/ --runner=DataflowRunner --project=<my-cloud-project>"
+</code></pre>
 </details>
