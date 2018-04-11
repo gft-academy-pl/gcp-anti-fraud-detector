@@ -47,17 +47,14 @@ If you want to execute pipeline on the DataFlow you need to:
       -Dversion="0.1" \
       -DinteractiveMode=false \
       -Dpackage=com.gft.academy</code></pre>
- 
-<p>Run sample flow on public dataset:</p>
+
+<h4>Run locally</h4>
 <pre><code>mvn compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
       -Dexec.args="--output=./output/"
 </code></pre>
-</details>
 
-### Run an Example Pipeline on the Cloud DataFlow Service ###
-
-<details><summary><b>Answer</b></summary>
+<h4>Run on the DataFlow</h4>
 <pre><code>mvn compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
       -Dexec.args="--project=&lt;my-cloud-project&gt; \
@@ -66,7 +63,6 @@ If you want to execute pipeline on the DataFlow you need to:
       --output=gs://gft-academy-fraud-detector-output/output \
       --runner=DataflowRunner"
 </code></pre>
-</details>
 
 ### Create own Pipeline to find the frauds ###
 
