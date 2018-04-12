@@ -294,6 +294,8 @@ public class FraudDetectorTest {
 <pre><code>mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.FraudDetector \
       -Dexec.args="--output=./target/frauds/ --runner=DataflowRunner --project=&lt;my-cloud-project&gt;"
+</code></pre>
+</details>
 
 ### Create Job Template ###
 
