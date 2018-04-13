@@ -72,8 +72,8 @@ If you want to execute pipeline on the DataFlow you need to:
 
 <details><summary><b>Answer</b></summary>
 <ul>
- <li>Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-data-dataflow/blob/master/src/main/java/com/gft/academy/FraudDetector.java</li>
- <li>Test: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-data-dataflow/blob/master/src/test/java/com/gft/academy/FraudDetectorTest.java</li>
+ <li>Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-dataflow/blob/master/src/main/java/com/gft/academy/FraudDetector.java</li>
+ <li>Test: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-dataflow/blob/master/src/test/java/com/gft/academy/FraudDetectorTest.java</li>
 </ul>
  
 <h4>Run locally</h4>
