@@ -113,3 +113,4 @@ If you want to execute pipeline on the DataFlow you need to:
 
 **Docs**
 - https://cloud.google.com/dataflow/docs/templates/executing-templates
+- https://cloud.google.com/dataflow/docs/templates/executing-templates#using-the-google-api-client-libraries
