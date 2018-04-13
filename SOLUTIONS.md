@@ -74,8 +74,19 @@ If you want to execute pipeline on the DataFlow you need to:
 
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
-import org.apache.beam.sdk.options.\*;
-import org.apache.beam.sdk.transforms.\*;
+import org.apache.beam.sdk.options.Default;
+import org.apache.beam.sdk.options.Description;
+import org.apache.beam.sdk.options.PipelineOptions;
+import org.apache.beam.sdk.options.PipelineOptionsFactory;
+import org.apache.beam.sdk.options.Validation;
+import org.apache.beam.sdk.options.ValueProvider;
+import org.apache.beam.sdk.transforms.DoFn;
+import org.apache.beam.sdk.transforms.Filter;
+import org.apache.beam.sdk.transforms.MapElements;
+import org.apache.beam.sdk.transforms.PTransform;
+import org.apache.beam.sdk.transforms.ParDo;
+import org.apache.beam.sdk.transforms.SimpleFunction;
+import org.apache.beam.sdk.transforms.Sum;
 import org.apache.beam.sdk.values.KV;
 import org.apache.beam.sdk.values.PCollection;
 import org.apache.beam.sdk.values.TypeDescriptors;
@@ -88,15 +99,16 @@ import java.util.Objects;
 public class FraudDetector {
 
     public static void main(String[] args) {
-        FraudDetectorOptions options = PipelineOptionsFactory.fromArgs(args).withValidation()
+        FraudDetectorOptions options = PipelineOptionsFactory.fromArgs(args)
+                .withValidation()
                 .as(FraudDetectorOptions.class);
         Pipeline p = Pipeline.create(options);
 
         p.apply("ReadLines", TextIO.read().from(options.getInputFile()))
-                .apply("Main fraud detecting pipeline",new FraudDetectorPipeline())
+                .apply("Main fraud detecting pipeline", new FraudDetectorPipeline())
                 .apply("Write Frauds to output", TextIO.write().to(options.getOutput()));
 
-        p.run().waitUntilFinish();
+        p.run();
     }
 
     public static class FraudDetectorPipeline extends PTransform<PCollection<String>, PCollection<String>> {
@@ -115,25 +127,28 @@ public class FraudDetector {
                     .apply("Filter clients where the sum of amount is more than 100", Filter.by(counts -> counts.getValue().compareTo(100L) > 0))
                     .apply(MapElements.into(TypeDescriptors.strings()).via(entry -> entry.getKey() + "," + entry.getValue()));
         }
-    }
 
+    }
 
     public interface FraudDetectorOptions extends PipelineOptions {
 
+
         @Description("Path of the file to read from")
         @Default.String("gs://gft-academy-fraud-detector-public-data/trades-small.csv")
-        String getInputFile();
+        ValueProvider<String> getInputFile();
 
-        void setInputFile(String value);
+        void setInputFile(ValueProvider<String> value);
 
         @Description("Path of the file to write to")
         @Validation.Required
-        String getOutput();
+        ValueProvider<String> getOutput();
 
-        void setOutput(String value);
+        void setOutput(ValueProvider<String> value);
+
     }
 
     public static class ParseTradeFn extends DoFn<String, Trade> {
+
 
         @ProcessElement
         public void processElement(ProcessContext c) {
@@ -154,6 +169,7 @@ public class FraudDetector {
     public static class Trade implements Serializable {
         String client;
         Integer amount;
+
         LocalDateTime createdOn;
 
         @Override
@@ -173,8 +189,8 @@ public class FraudDetector {
         public int hashCode() {
             return Objects.hash(createdOn);
         }
-    }
 
+    }
 }
 </code></pre>
 
