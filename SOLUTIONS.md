@@ -27,8 +27,6 @@ gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
 
 ## Anti Fraud ETL
 
-Source repository: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-data-dataflow
-
 ### Create DataFlow bootstrap project
 
 **Docs**
@@ -71,6 +69,8 @@ If you want to execute pipeline on the DataFlow you need to:
 ### Create own Pipeline to find the frauds ###
 
 <details><summary><b>Answer</b></summary>
+- Source repository: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-data-dataflow
+
 <ul>
  <li>Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-dataflow/blob/master/src/main/java/com/gft/academy/FraudDetector.java</li>
  <li>Test: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-dataflow/blob/master/src/test/java/com/gft/academy/FraudDetectorTest.java</li>
