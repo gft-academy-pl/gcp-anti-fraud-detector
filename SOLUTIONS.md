@@ -25,7 +25,7 @@ gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
 </code></pre>
 </details>
 
-## Antifraud ETL
+## Anti Fraud ETL
 
 ### Create DataFlow bootstrap project
 
