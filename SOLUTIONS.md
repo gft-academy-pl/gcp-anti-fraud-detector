@@ -93,7 +93,7 @@ If you want to execute pipeline on the DataFlow you need to:
 </code></pre>
 </details>
 
-### Create Job Template ###
+### Create job template ###
 
 **Docs**
 - https://cloud.google.com/dataflow/docs/templates/overview
@@ -108,3 +108,8 @@ If you want to execute pipeline on the DataFlow you need to:
        --runner=DataflowRunner"
 </code></pre>
 </details>
+
+### Execute job from custom template
+
+**Docs**
+- https://cloud.google.com/dataflow/docs/templates/executing-templates
