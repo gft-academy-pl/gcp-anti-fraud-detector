@@ -27,6 +27,8 @@ gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
 
 ## Anti Fraud ETL
 
+Source repository: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-data-dataflow
+
 ### Create DataFlow bootstrap project
 
 **Docs**
@@ -49,18 +51,19 @@ If you want to execute pipeline on the DataFlow you need to:
       -Dpackage=com.gft.academy</code></pre>
 
 <h4>Run locally</h4>
-<pre><code>mvn compile exec:java \
+<pre><code>mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
-      -Dexec.args="--output=./output/"
+      -Dexec.args="--output=./target/wordcount/ \
+      --inputFile=gs://gft-academy-fraud-detector-public-data/kinglear.txt"
 </code></pre>
 
 <h4>Run on the DataFlow</h4>
-<pre><code>mvn compile exec:java \
+<pre><code>mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
-      -Dexec.args="--project=&lt;my-cloud-project&gt; \
-      --stagingLocation=gs://gft-academy-fraud-detector-output/staging/ \
-      --inputFile=gs://gft-academy-fraud-detector-input/trades-small.csv \
-      --output=gs://gft-academy-fraud-detector-output/output \
+      -Dexec.args="--project=gft-swat-team \
+      --inputFile=gs://gft-academy-fraud-detector-public-data/trades-small.csv \
+      --output=gs://gft-academy-fraud-detector-output/wordcount \
+      --stagingLocation=gs://gft-academy-fraud-detector-output/wordcount-staging \
       --runner=DataflowRunner"
 </code></pre>
 </details>
@@ -108,7 +111,7 @@ public class FraudDetector {
                 .apply("Main fraud detecting pipeline", new FraudDetectorPipeline())
                 .apply("Write Frauds to output", TextIO.write().to(options.getOutput()));
 
-        p.run();
+        p.run().waitUntilFinish();
     }
 
     public static class FraudDetectorPipeline extends PTransform<PCollection<String>, PCollection<String>> {
@@ -123,7 +126,7 @@ public class FraudDetector {
                             return KV.of(input.client, input.amount.longValue());
                         }
                     }))
-                    .apply("Sum total amount per client", Sum.longsPerKey())
+                    .apply(Sum.longsPerKey())
                     .apply("Filter clients where the sum of amount is more than 100", Filter.by(counts -> counts.getValue().compareTo(100L) > 0))
                     .apply(MapElements.into(TypeDescriptors.strings()).via(entry -> entry.getKey() + "," + entry.getValue()));
         }
@@ -302,14 +305,18 @@ public class FraudDetectorTest {
 
 <h4>Run locally</h4>
 <pre><code>mvn clean compile exec:java \
-      -Dexec.mainClass=com.gft.academy.FraudDetector \
-      -Dexec.args="--output=./target/frauds/"
+       -Dexec.mainClass=com.gft.academy.FraudDetector \
+       -Dexec.args="--output=./target/frauds/ \
+       --inputFile=gs://gft-academy-fraud-detector-public-data/trades-small.csv"
 </code></pre>
  
 <h4>Run on the DataFlow</h4>
 <pre><code>mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.FraudDetector \
-      -Dexec.args="--output=./target/frauds/ --runner=DataflowRunner --project=&lt;my-cloud-project&gt;"
+      -Dexec.args="--project=gft-swat-team \
+      --inputFile=gs://gft-academy-fraud-detector-public-data/trades-small.csv \
+      --output=gs://gft-academy-fraud-detector-output/frauds \
+      --stagingLocation=gs://gft-academy-fraud-detector-output/frauds-staging --runner=DataflowRunner"
 </code></pre>
 </details>
 
@@ -321,12 +328,10 @@ public class FraudDetectorTest {
 - https://cloud.google.com/dataflow/docs/templates/executing-templates
 
 <details><summary><b>Answer</b></summary>
-<pre><code>mvn compile exec:java \
-      -Dexec.mainClass=com.gft.academy.WordCount \
-      -Dexec.args="--project=&lt;my-cloud-project&gt; \
-      --stagingLocation=gs://gft-academy-fraud-detector-output/staging/ \
-      --inputFile=gs://gft-academy-fraud-detector-input/trades-small.csv \
-      --output=gs://gft-academy-fraud-detector-output/output \
-      --runner=DataflowRunner"
+<pre><code>mvn clean compile exec:java \
+       -Dexec.mainClass=com.gft.academy.FraudDetector \
+       -Dexec.args="--project=gft-swat-team \
+       --templateLocation=gs://gft-academy-fraud-detector-output/templates/fraud-detector \
+       --runner=DataflowRunner"
 </code></pre>
 </details>
