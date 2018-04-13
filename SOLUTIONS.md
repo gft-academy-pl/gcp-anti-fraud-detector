@@ -108,8 +108,19 @@ If you want to execute pipeline on the DataFlow you need to:
 </code></pre>
 </details>
 
-### Execute job from custom template
+### Execute job from custom template via web interface
 
 **Docs**
 - https://cloud.google.com/dataflow/docs/templates/executing-templates
+
+### Observe bucket file changes and trigger DataFlow with Cloud Functions
+
+**Docs**
 - https://cloud.google.com/dataflow/docs/templates/executing-templates#using-the-google-api-client-libraries
+- https://developers.google.com/api-client-library/
+- https://github.com/google/google-api-nodejs-client/#google-apis-nodejs-client
+
+<details><summary><b>Answer</b></summary>
+<pre><code>TBD
+</code></pre>
+</details>
