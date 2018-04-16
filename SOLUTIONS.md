@@ -141,6 +141,9 @@ echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
 
 **Call sample function**
 <pre><code>functions call sampleFn</code></pre>
+
+**Observe logs**
+<pre><code>functions logs read</code></pre>
 </details>
 
 ### Trigger DataFlow with Cloud Function
@@ -158,9 +161,11 @@ echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
  <li>Test: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-cloud-functions/blob/master/inputDataTrigger/index.test.js</li>
 </ul>
  
- **Deploy and run function via simulator**
+ **Deploy, run, observe function logs via simulator**
 <pre><code>functions deploy inputDataTriggerFn --trigger-http
-functions call inputDataTriggerFn</code></pre>
+functions call inputDataTriggerFn
+functions logs read</code></pre></code></pre>
+
  
 **Deploy to GCP**
 <pre><code>TBD</code></pre></details>
