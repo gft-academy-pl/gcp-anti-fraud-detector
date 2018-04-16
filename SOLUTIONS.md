@@ -114,9 +114,10 @@ mvn archetype:generate \
 **Docs**
 - https://cloud.google.com/dataflow/docs/templates/executing-templates
 
-### Getting started with Cloud Functions - emulator
+### Getting started with Cloud Functions
 
 **Docs**
+- https://cloud.google.com/functions/docs/
 - https://github.com/GoogleCloudPlatform/cloud-functions-emulator
 
 <details><summary><b>Answer</b></summary>
@@ -146,6 +147,9 @@ echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
 <pre><code>functions logs read</code></pre>
 </details>
 
+**Deploy function to cloud**
+
+
 ### Trigger DataFlow with Cloud Function
 
 **Docs**
@@ -162,9 +166,8 @@ echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
 </ul>
  
  **Deploy, run, observe function logs via simulator**
-<pre><code>functions deploy inputDataTriggerFn --trigger-http
-functions call inputDataTriggerFn
-functions logs read</code></pre></code></pre>
+<pre><code>sudo functions logs clear && functions deploy inputDataTriggerFn --trigger-bucket=gft-academy-fraud-dete
+ctor-input && functions call inputDataTriggerFn && functions logs read</code></pre></code></pre>
 
  
 **Deploy to GCP**
