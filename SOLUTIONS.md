@@ -27,7 +27,7 @@ gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
 
 ## Anti Fraud ETL
 
-### Create DataFlow bootstrap project
+### Getting started with DataFlow - bootstrap initial project
 
 **Docs**
 - https://cloud.google.com/dataflow/docs
@@ -112,6 +112,33 @@ If you want to execute pipeline on the DataFlow you need to:
 
 **Docs**
 - https://cloud.google.com/dataflow/docs/templates/executing-templates
+
+### Getting started with Cloud Functions - emulator
+
+**Docs**
+- https://github.com/GoogleCloudPlatform/cloud-functions-emulator
+
+<details><summary><b>Answer</b></summary>
+
+**Create sample function**
+<pre><code>mkdir -p gcp-anti-fraud-detector-input-data-function/sampleFn
+cd gcp-anti-fraud-detector-input-data-function/sampleFn
+touch index.js
+echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
+</code></pre>
+ 
+**Install emulator globally**
+<pre><code>sudo npm install -g @google-cloud/functions-emulator</code></pre>
+
+**Run emulator and specify working projectId**
+<pre><code>sudo functions start</code></pre>
+
+**Deploy sample function**
+<pre><code>functions deploy sampleFn --trigger-http</code></pre>
+
+**Call sample function**
+<pre><code>functions call sampleFn</code></pre>
+</details>
 
 ### Observe bucket file changes and trigger DataFlow with Cloud Functions
 
