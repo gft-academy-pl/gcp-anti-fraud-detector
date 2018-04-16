@@ -153,10 +153,14 @@ echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
 ### Trigger DataFlow with Cloud Function
 
 **Docs**
+- https://shinesolutions.com/2017/03/23/triggering-dataflow-pipelines-with-cloud-functions/ - with templates
+- https://cloud.google.com/blog/big-data/2016/04/scheduling-dataflow-pipelines-using-app-engine-cron-service-or-cloud-functions - with spawning processess
 - https://cloud.google.com/dataflow/docs/templates/executing-templates#using-the-google-api-client-libraries
 - https://developers.google.com/api-client-library/
 - https://github.com/google/google-api-nodejs-client/#google-apis-nodejs-client
 - https://github.com/google/google-api-nodejs-client/#authentication-and-authorization
+- http://google.github.io/google-api-nodejs-client/
+- http://google.github.io/google-api-nodejs-client/classes/_apis_dataflow_v1b3_.dataflow.html
 
 <details><summary><b>Answer</b></summary>
 <ul>
