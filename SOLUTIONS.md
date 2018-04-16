@@ -38,7 +38,8 @@ If you want to execute pipeline on the DataFlow you need to:
  2. authenticate with command: ```gcloud auth login```
 
 <details><summary><b>Answer</b></summary>
-<pre><code>mvn archetype:generate \
+<pre><code> cd ~
+mvn archetype:generate \
       -DarchetypeArtifactId=google-cloud-dataflow-java-archetypes-examples \
       -DarchetypeGroupId=com.google.cloud.dataflow \
       -DarchetypeVersion=2.4.0 \
@@ -121,8 +122,10 @@ If you want to execute pipeline on the DataFlow you need to:
 <details><summary><b>Answer</b></summary>
 
 **Create sample function**
-<pre><code>mkdir -p gcp-anti-fraud-detector-input-data-function/sampleFn
-cd gcp-anti-fraud-detector-input-data-function/sampleFn
+<pre><code>
+cd ~
+mkdir -p gcp-anti-fraud-detector-cloud-functions/sampleFn
+cd gcp-anti-fraud-detector-cloud-functions/sampleFn
 touch index.js
 echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
 </code></pre>
@@ -140,14 +143,19 @@ echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
 <pre><code>functions call sampleFn</code></pre>
 </details>
 
-### Observe bucket file changes and trigger DataFlow with Cloud Functions
+### Trigger DataFlow with Cloud Function
 
 **Docs**
 - https://cloud.google.com/dataflow/docs/templates/executing-templates#using-the-google-api-client-libraries
 - https://developers.google.com/api-client-library/
 - https://github.com/google/google-api-nodejs-client/#google-apis-nodejs-client
+- https://github.com/google/google-api-nodejs-client/#authentication-and-authorization
 
 <details><summary><b>Answer</b></summary>
-<pre><code>TBD
-</code></pre>
-</details>
+<ul>
+ <li>Source repository: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-cloud-functions</li>
+ <li>Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-cloud-functions/blob/master/inputDataTrigger/index.js</li>
+ <li>Test: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-cloud-functions/blob/master/inputDataTrigger/index.test.js</li>
+</ul>
+<h4>Deploy via emulator</h4>
+<pre><code>TBD</code></pre></details>
