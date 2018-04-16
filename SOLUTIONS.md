@@ -49,14 +49,14 @@ mvn archetype:generate \
       -DinteractiveMode=false \
       -Dpackage=com.gft.academy</code></pre>
 
-<h4>Run locally</h4>
+**Run locally**
 <pre><code>mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
       -Dexec.args="--output=./target/wordcount/ \
       --inputFile=gs://gft-academy-fraud-detector-public-data/kinglear.txt"
 </code></pre>
 
-<h4>Run on the DataFlow</h4>
+**Run on the DataFlow**
 <pre><code>mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
       -Dexec.args="--project=gft-swat-team \
@@ -76,14 +76,14 @@ mvn archetype:generate \
  <li>Test: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-dataflow/blob/master/src/test/java/com/gft/academy/FraudDetectorTest.java</li>
 </ul>
  
-<h4>Run locally</h4>
+**Run locally**
 <pre><code>mvn clean compile exec:java \
        -Dexec.mainClass=com.gft.academy.FraudDetector \
        -Dexec.args="--output=./target/frauds/ \
        --inputFile=gs://gft-academy-fraud-detector-public-data/trades-small.csv"
 </code></pre>
  
-<h4>Run on the DataFlow</h4>
+**Run on the DataFlow**
 <pre><code>mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.FraudDetector \
       -Dexec.args="--project=gft-swat-team \
@@ -157,5 +157,10 @@ echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
  <li>Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-cloud-functions/blob/master/inputDataTrigger/index.js</li>
  <li>Test: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-cloud-functions/blob/master/inputDataTrigger/index.test.js</li>
 </ul>
-<h4>Deploy via emulator</h4>
+ 
+ **Deploy and run function via simulator**
+<pre><code>functions deploy inputDataTriggerFn --trigger-http
+functions call inputDataTriggerFn</code></pre>
+ 
+**Deploy to GCP**
 <pre><code>TBD</code></pre></details>
