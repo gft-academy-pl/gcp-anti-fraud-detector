@@ -84,22 +84,34 @@ cd gcp-anti-fraud-detector</code></pre>
  <li>Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-dataflow/blob/master/src/main/java/com/gft/academy/FraudDetector.java</li>
  <li>Test: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-dataflow/blob/master/src/test/java/com/gft/academy/FraudDetectorTest.java</li>
 </ul>
- 
+
+**Prepare**
+
+```
+cd ~ 
+rm -rf gcp-anti-fraud-detector-data-dataflow
+git clone git@github.com:gft-academy-pl/gcp-anti-fraud-detector-dataflow.git
+cd gcp-anti-fraud-detector-data-dataflow
+```
+  
 **Run locally**
-<pre><code>mvn clean compile exec:java \
+
+```
+mvn clean compile exec:java \
        -Dexec.mainClass=com.gft.academy.FraudDetector \
        -Dexec.args="--output=./target/frauds/ \
        --inputFile=gs://gft-academy-fraud-detector-public-data/trades-small.csv"
-</code></pre>
+```
  
 **Run on the DataFlow**
-<pre><code>mvn clean compile exec:java \
+```
+mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.FraudDetector \
       -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
       --inputFile=gs://gft-academy-fraud-detector-public-data/trades-small.csv \
       --output=${GCP_OUTPUT_BUCKET}frauds \
       --stagingLocation=${GCP_OUTPUT_BUCKET}frauds-staging --runner=DataflowRunner"
-</code></pre>
+```
 </details>
 
 ### Create job template ###
