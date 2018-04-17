@@ -42,10 +42,6 @@ gsutil mb -c regional -l europe-west3 ${GCP_OUTPUT_BUCKET}
 - https://cloud.google.com/dataflow/docs
 - https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-maven
 
-If you want to execute pipeline on the DataFlow you need to:
- 1. install gsutils locally
- 2. authenticate with command: ```gcloud auth login```
-
 <details><summary><b>Answer</b></summary>
 <pre><code> cd ~
 mvn archetype:generate \
