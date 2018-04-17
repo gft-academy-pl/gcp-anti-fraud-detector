@@ -164,8 +164,8 @@ mvn clean compile exec:java \
 
 ```
 cd ~
-mkdir -p gcp-anti-fraud-detector-cloud-functions/sampleFn
-cd gcp-anti-fraud-detector-cloud-functions/sampleFn
+mkdir -p gcp-anti-fraud-detector-cloud-functions/helloworldFn
+cd gcp-anti-fraud-detector-cloud-functions/helloworldFn
 touch index.js
 echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
 ```
@@ -182,24 +182,31 @@ sudo npm install -g @google-cloud/functions-emulator
 sudo functions start
 ```
 
-**Deploy sample function**
+**Deploy sample function to emulator**
 
 ```
-functions deploy sampleFn --trigger-http
+functions deploy helloworldFn --trigger-http
 ```
 
 **Call sample function**
+
 ```
-functions call sampleFn
+functions call helloworldFn
 ```
 
 **Observe logs**
+
 ```
 functions logs read
 ```
+
 </details>
 
 **Deploy function to cloud**
+
+```
+gcloud beta functions deploy helloworld --trigger-http
+```
 
 ### Authorized calls to DataFlow API using Application Default Credentials
 
