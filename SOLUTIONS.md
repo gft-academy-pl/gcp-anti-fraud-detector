@@ -12,8 +12,6 @@ export GCP_OUTPUT_BUCKET=gs://gft-academy-fraud-detector-output/
 
 https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/ or use https method
 
-```
-
 ## Storage 
  - for fraud detector data input
  - for fraud detector data output
