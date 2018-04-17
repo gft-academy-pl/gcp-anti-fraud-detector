@@ -1,3 +1,11 @@
+## Init
+
+```
+# GOOGLE_CLOUD_PROJECT
+export GCP_INPUT_BUCKET=gs://gft-academy-fraud-detector-input/
+export GCP_OUTPUT_BUCKET=gs://gft-academy-fraud-detector-output/
+```
+
 ## Storage 
  - for fraud detector data input
  - for fraud detector data output
@@ -5,12 +13,13 @@
 ### Create 3 buckets
 
 **Docs**
+
 - gsutils mb: https://cloud.google.com/storage/docs/gsutil/commands/mb 
 - bucket locations: https://cloud.google.com/storage/docs/bucket-locations
 
 <details><summary><b>Answer</b></summary>
-<pre><code>gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-input/
-gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
+<pre><code>gsutil mb -c regional -l europe-west3 ${GCP_INPUT_BUCKET}
+gsutil mb -c regional -l europe-west3 ${GCP_OUTPUT_BUCKET}
 </code></pre>
 </details>
 
@@ -21,7 +30,7 @@ gsutil mb -c regional -l europe-west3 gs://gft-academy-fraud-detector-output/
 - gsutils cp: https://cloud.google.com/storage/docs/gsutil/commands/cp
 
 <details><summary><b>Answer</b></summary>
-<pre><code>gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://gft-academy-fraud-detector-input/
+<pre><code>gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv ${GCP_INPUT_BUCKET}
 </code></pre>
 </details>
 
@@ -61,8 +70,8 @@ mvn archetype:generate \
       -Dexec.mainClass=com.gft.academy.WordCount \
       -Dexec.args="--project=gft-swat-team \
       --inputFile=gs://gft-academy-fraud-detector-public-data/trades-small.csv \
-      --output=gs://gft-academy-fraud-detector-output/wordcount \
-      --stagingLocation=gs://gft-academy-fraud-detector-output/wordcount-staging \
+      --output=${GCP_OUTPUT_BUCKET}wordcount \
+      --stagingLocation=${GCP_OUTPUT_BUCKET}wordcount-staging \
       --runner=DataflowRunner"
 </code></pre>
 </details>
@@ -88,8 +97,8 @@ mvn archetype:generate \
       -Dexec.mainClass=com.gft.academy.FraudDetector \
       -Dexec.args="--project=gft-swat-team \
       --inputFile=gs://gft-academy-fraud-detector-public-data/trades-small.csv \
-      --output=gs://gft-academy-fraud-detector-output/frauds \
-      --stagingLocation=gs://gft-academy-fraud-detector-output/frauds-staging --runner=DataflowRunner"
+      --output=${GCP_OUTPUT_BUCKET}frauds \
+      --stagingLocation=${GCP_OUTPUT_BUCKET}frauds-staging --runner=DataflowRunner"
 </code></pre>
 </details>
 
@@ -104,7 +113,7 @@ mvn archetype:generate \
 <pre><code>mvn clean compile exec:java \
        -Dexec.mainClass=com.gft.academy.FraudDetector \
        -Dexec.args="--project=gft-swat-team \
-       --templateLocation=gs://gft-academy-fraud-detector-output/templates/fraud-detector \
+       --templateLocation=${GCP_OUTPUT_BUCKET}templates/fraud-detector \
        --runner=DataflowRunner"
 </code></pre>
 </details>
