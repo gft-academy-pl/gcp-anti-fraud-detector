@@ -205,7 +205,7 @@ functions logs read
 - Enable API first: https://console.cloud.google.com/apis/library/cloudfunctions.googleapis.com
 
 ```
-gcloud beta functions deploy helloworld --trigger-http
+gcloud beta functions deploy helloworldFn --trigger-http
 ```
 
 </details>
@@ -220,6 +220,18 @@ gcloud beta functions deploy helloworld --trigger-http
 - http://google.github.io/google-api-nodejs-client/
 - http://google.github.io/google-api-nodejs-client/classes/_apis_dataflow_v1b3_.dataflow.html
 
+<details><summary><b>Answer</b></summary>
+
+**Prepare**
+
+```
+cd ~ && \
+rm -rf gcp-anti-fraud-detector-cloud-functions&& \
+git clone git@github.com:gft-academy-pl/gcp-anti-fraud-detector-cloud-functions.git && \
+cd gcp-anti-fraud-detector-cloud-functions
+```
+
+</details>
 
 ### Trigger DataFlow with Cloud Function
 
