@@ -18,9 +18,10 @@ export GCP_OUTPUT_BUCKET=gs://gft-academy-fraud-detector-output/
 - bucket locations: https://cloud.google.com/storage/docs/bucket-locations
 
 <details><summary><b>Answer</b></summary>
-<pre><code>gsutil mb -c regional -l europe-west3 ${GCP_INPUT_BUCKET}
+```
+gsutil mb -c regional -l europe-west3 ${GCP_INPUT_BUCKET}
 gsutil mb -c regional -l europe-west3 ${GCP_OUTPUT_BUCKET}
-</code></pre>
+```
 </details>
 
 
@@ -30,8 +31,10 @@ gsutil mb -c regional -l europe-west3 ${GCP_OUTPUT_BUCKET}
 - gsutils cp: https://cloud.google.com/storage/docs/gsutil/commands/cp
 
 <details><summary><b>Answer</b></summary>
-<pre><code>gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv ${GCP_INPUT_BUCKET}
-</code></pre>
+
+```
+gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv ${GCP_INPUT_BUCKET}
+```
 </details>
 
 ## Anti Fraud ETL
@@ -43,7 +46,8 @@ gsutil mb -c regional -l europe-west3 ${GCP_OUTPUT_BUCKET}
 - https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-maven
 
 <details><summary><b>Answer</b></summary>
-<pre><code> cd ~
+```
+cd ~
 mvn archetype:generate \
       -DarchetypeArtifactId=google-cloud-dataflow-java-archetypes-examples \
       -DarchetypeGroupId=com.google.cloud.dataflow \
@@ -53,27 +57,30 @@ mvn archetype:generate \
       -Dversion="0.1" \
       -DinteractiveMode=false \
       -Dpackage=com.gft.academy
-cd gcp-anti-fraud-detector</code></pre>
+cd gcp-anti-fraud-detector
+```
 
 **Run locally**
-<pre><code>mvn clean compile exec:java \
+```
+mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
       -Dexec.args="--output=./target/wordcount/ \
       --inputFile=gs://gft-academy-fraud-detector-public-data/kinglear.txt"
-</code></pre>
+```
 
 **Run on the DataFlow**
 
 - Enable API first: https://console.cloud.google.com/apis/library/dataflow.googleapis.com
 
-<pre><code>mvn clean compile exec:java \
+```
+mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
       -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
       --inputFile=gs://gft-academy-fraud-detector-public-data/trades-small.csv \
       --output=${GCP_OUTPUT_BUCKET}wordcount \
       --stagingLocation=${GCP_OUTPUT_BUCKET}wordcount-staging \
       --runner=DataflowRunner"
-</code></pre>
+```
 </details>
 
 ### Create own Pipeline to find the frauds ###
@@ -88,11 +95,10 @@ cd gcp-anti-fraud-detector</code></pre>
 **Prepare**
 
 ```
-cd ~ 
-rm -rf gcp-anti-fraud-detector-data-dataflow
-git clone git@github.com:gft-academy-pl/gcp-anti-fraud-detector-dataflow.git
-cd gcp-anti-fraud-detector-data-dataflow
-pwd
+cd ~ && \
+rm -rf gcp-anti-fraud-detector-dataflow && \
+git clone git@github.com:gft-academy-pl/gcp-anti-fraud-detector-dataflow.git && \
+cd gcp-anti-fraud-detector-dataflow
 ```
   
 **Run locally**
@@ -123,12 +129,14 @@ mvn clean compile exec:java \
 - https://cloud.google.com/dataflow/docs/templates/executing-templates
 
 <details><summary><b>Answer</b></summary>
-<pre><code>mvn clean compile exec:java \
+
+```
+mvn clean compile exec:java \
        -Dexec.mainClass=com.gft.academy.FraudDetector \
        -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
        --templateLocation=${GCP_OUTPUT_BUCKET}templates/fraud-detector \
        --runner=DataflowRunner"
-</code></pre>
+```
 </details>
 
 ### Execute job from custom template via web interface
@@ -145,28 +153,42 @@ mvn clean compile exec:java \
 <details><summary><b>Answer</b></summary>
 
 **Create sample function**
-<pre><code>
+
+```
 cd ~
 mkdir -p gcp-anti-fraud-detector-cloud-functions/sampleFn
 cd gcp-anti-fraud-detector-cloud-functions/sampleFn
 touch index.js
 echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
-</code></pre>
+```
  
 **Install emulator globally**
-<pre><code>sudo npm install -g @google-cloud/functions-emulator</code></pre>
+
+```
+sudo npm install -g @google-cloud/functions-emulator
+```
 
 **Run emulator and specify working projectId**
-<pre><code>sudo functions start</code></pre>
+
+```
+sudo functions start
+```
 
 **Deploy sample function**
-<pre><code>functions deploy sampleFn --trigger-http</code></pre>
+
+```
+functions deploy sampleFn --trigger-http
+```
 
 **Call sample function**
-<pre><code>functions call sampleFn</code></pre>
+```
+functions call sampleFn
+```
 
 **Observe logs**
-<pre><code>functions logs read</code></pre>
+```
+functions logs read
+```
 </details>
 
 **Deploy function to cloud**
