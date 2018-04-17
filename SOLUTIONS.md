@@ -226,14 +226,21 @@ gcloud beta functions deploy helloworldFn --trigger-http
 
 ```
 cd ~ && \
-rm -rf gcp-anti-fraud-detector-cloud-functions&& \
+rm -rf gcp-anti-fraud-detector-cloud-functions && \
 git clone git@github.com:gft-academy-pl/gcp-anti-fraud-detector-cloud-functions.git && \
-cd gcp-anti-fraud-detector-cloud-functions
+cd gcp-anti-fraud-detector-cloud-functions && \
+npm install
+```
+
+**Test API call with Application Default Credentials**
+
+```
+npm run test-auth
 ```
 
 </details>
 
-### Trigger DataFlow with Cloud Function
+### Trigger DataFlow template with Cloud Function
 
 **Docs**
 - https://shinesolutions.com/2017/03/23/triggering-dataflow-pipelines-with-cloud-functions/ - with templates
