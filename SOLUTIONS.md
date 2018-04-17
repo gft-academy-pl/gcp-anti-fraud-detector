@@ -199,14 +199,13 @@ functions call helloworldFn
 ```
 functions logs read
 ```
-
-</details>
-
 **Deploy function to cloud**
 
 ```
 gcloud beta functions deploy helloworld --trigger-http
 ```
+
+</details>
 
 ### Authorized calls to DataFlow API using Application Default Credentials
 
