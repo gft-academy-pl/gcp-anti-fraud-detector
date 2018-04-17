@@ -52,7 +52,8 @@ mvn archetype:generate \
       -DartifactId=gcp-anti-fraud-detector \
       -Dversion="0.1" \
       -DinteractiveMode=false \
-      -Dpackage=com.gft.academy</code></pre>
+      -Dpackage=com.gft.academy
+cd gcp-anti-fraud-detector</code></pre>
 
 **Run locally**
 <pre><code>mvn clean compile exec:java \
