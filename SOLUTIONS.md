@@ -65,7 +65,7 @@ cd gcp-anti-fraud-detector</code></pre>
 **Run on the DataFlow**
 <pre><code>mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
-      -Dexec.args="--project=gft-swat-team \
+      -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
       --inputFile=gs://gft-academy-fraud-detector-public-data/trades-small.csv \
       --output=${GCP_OUTPUT_BUCKET}wordcount \
       --stagingLocation=${GCP_OUTPUT_BUCKET}wordcount-staging \
@@ -92,7 +92,7 @@ cd gcp-anti-fraud-detector</code></pre>
 **Run on the DataFlow**
 <pre><code>mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.FraudDetector \
-      -Dexec.args="--project=gft-swat-team \
+      -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
       --inputFile=gs://gft-academy-fraud-detector-public-data/trades-small.csv \
       --output=${GCP_OUTPUT_BUCKET}frauds \
       --stagingLocation=${GCP_OUTPUT_BUCKET}frauds-staging --runner=DataflowRunner"
@@ -109,7 +109,7 @@ cd gcp-anti-fraud-detector</code></pre>
 <details><summary><b>Answer</b></summary>
 <pre><code>mvn clean compile exec:java \
        -Dexec.mainClass=com.gft.academy.FraudDetector \
-       -Dexec.args="--project=gft-swat-team \
+       -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
        --templateLocation=${GCP_OUTPUT_BUCKET}templates/fraud-detector \
        --runner=DataflowRunner"
 </code></pre>
