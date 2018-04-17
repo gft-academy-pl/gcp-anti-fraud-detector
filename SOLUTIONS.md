@@ -36,6 +36,7 @@ gsutil mb -c regional -l europe-west3 ${GCP_OUTPUT_BUCKET}
 ```
 gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv ${GCP_INPUT_BUCKET}
 ```
+
 </details>
 
 ## Anti Fraud ETL
@@ -47,6 +48,7 @@ gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv ${GCP_INP
 - https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-maven
 
 <details><summary><b>Answer</b></summary>
+ 
 ```
 cd ~
 mvn archetype:generate \
@@ -62,6 +64,7 @@ cd gcp-anti-fraud-detector
 ```
 
 **Run locally**
+
 ```
 mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
@@ -82,6 +85,7 @@ mvn clean compile exec:java \
       --stagingLocation=${GCP_OUTPUT_BUCKET}wordcount-staging \
       --runner=DataflowRunner"
 ```
+
 </details>
 
 ### Create own Pipeline to find the frauds ###
@@ -112,6 +116,7 @@ mvn clean compile exec:java \
 ```
  
 **Run on the DataFlow**
+
 ```
 mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.FraudDetector \
@@ -120,6 +125,7 @@ mvn clean compile exec:java \
       --output=${GCP_OUTPUT_BUCKET}frauds \
       --stagingLocation=${GCP_OUTPUT_BUCKET}frauds-staging --runner=DataflowRunner"
 ```
+
 </details>
 
 ### Create job template ###
@@ -138,6 +144,7 @@ mvn clean compile exec:java \
        --templateLocation=${GCP_OUTPUT_BUCKET}templates/fraud-detector \
        --runner=DataflowRunner"
 ```
+
 </details>
 
 ### Execute job from custom template via web interface
