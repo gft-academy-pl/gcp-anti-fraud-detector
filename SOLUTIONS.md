@@ -163,11 +163,12 @@ mvn clean compile exec:java \
 **Create sample function**
 
 ```
-cd ~
-mkdir -p gcp-anti-fraud-detector-cloud-functions/helloworldFn
-cd gcp-anti-fraud-detector-cloud-functions/helloworldFn
-touch index.js
-echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
+cd ~ && \
+rm -rf gcp-anti-fraud-detector-cloud-functions && \
+mkdir -p gcp-anti-fraud-detector-cloud-functions/helloworldFn && \
+cd gcp-anti-fraud-detector-cloud-functions/helloworldFn && \
+touch index.js && \
+echo 'exports.helloworldFn = (req, res) => res.send("Hello, World!");' > index.js
 ```
  
 **Install emulator globally**
@@ -200,6 +201,8 @@ functions call helloworldFn
 functions logs read
 ```
 **Deploy function to cloud**
+
+- Enable API first: https://console.cloud.google.com/apis/library/cloudfunctions.googleapis.com
 
 ```
 gcloud beta functions deploy helloworld --trigger-http
