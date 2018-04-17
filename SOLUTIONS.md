@@ -149,12 +149,13 @@ echo 'exports.helloWorld = (req, res) => res.send("Hello, World!");' > index.js
 
 **Deploy function to cloud**
 
-### Authorized calls to DataFlow API
+### Authorized calls to DataFlow API using 
 
 **Docs**
 - https://developers.google.com/api-client-library/
 - https://github.com/google/google-api-nodejs-client/#google-apis-nodejs-client
 - https://github.com/google/google-api-nodejs-client/#authentication-and-authorization
+- https://github.com/google/google-auth-library-nodejs#choosing-the-correct-credential-type-automatically
 - http://google.github.io/google-api-nodejs-client/
 - http://google.github.io/google-api-nodejs-client/classes/_apis_dataflow_v1b3_.dataflow.html
 
