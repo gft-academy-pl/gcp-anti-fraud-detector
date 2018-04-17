@@ -10,11 +10,8 @@ export GCP_OUTPUT_BUCKET=gs://gft-academy-fraud-detector-output/
 
 **GIT with github.com**
 
-https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/ or use https method
 
-```
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
 ```
 
 ## Storage 
