@@ -92,6 +92,7 @@ cd ~
 rm -rf gcp-anti-fraud-detector-data-dataflow
 git clone git@github.com:gft-academy-pl/gcp-anti-fraud-detector-dataflow.git
 cd gcp-anti-fraud-detector-data-dataflow
+pwd
 ```
   
 **Run locally**
