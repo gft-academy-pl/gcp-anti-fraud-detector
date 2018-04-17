@@ -181,3 +181,6 @@ ctor-input && functions call inputDataTriggerFn && functions logs read</code></p
  
 **Deploy to GCP**
 <pre><code>TBD</code></pre></details>
+
+## TODO
+- Use token based authentication inside cloud functions
