@@ -18,6 +18,7 @@ export GCP_OUTPUT_BUCKET=gs://gft-academy-fraud-detector-output/
 - bucket locations: https://cloud.google.com/storage/docs/bucket-locations
 
 <details><summary><b>Answer</b></summary>
+ 
 ```
 gsutil mb -c regional -l europe-west3 ${GCP_INPUT_BUCKET}
 gsutil mb -c regional -l europe-west3 ${GCP_OUTPUT_BUCKET}
