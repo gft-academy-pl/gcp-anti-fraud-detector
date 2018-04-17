@@ -165,8 +165,8 @@ mvn clean compile exec:java \
 ```
 cd ~ && \
 rm -rf gcp-anti-fraud-detector-cloud-functions && \
-mkdir -p gcp-anti-fraud-detector-cloud-functions/helloworldFn && \
-cd gcp-anti-fraud-detector-cloud-functions/helloworldFn && \
+mkdir -p gcp-anti-fraud-detector-cloud-functions && \
+cd gcp-anti-fraud-detector-cloud-functions && \
 touch index.js && \
 echo 'exports.helloworldFn = (req, res) => res.send("Hello, World!");' > index.js
 ```
@@ -200,6 +200,7 @@ functions call helloworldFn
 ```
 functions logs read
 ```
+
 **Deploy function to cloud**
 
 - Enable API first: https://console.cloud.google.com/apis/library/cloudfunctions.googleapis.com
@@ -240,7 +241,7 @@ npm run test-auth
 
 </details>
 
-### Trigger DataFlow template with Cloud Function
+### Trigger DataFlow job template with Cloud Function
 
 **Docs**
 - https://shinesolutions.com/2017/03/23/triggering-dataflow-pipelines-with-cloud-functions/ - with templates
@@ -254,13 +255,22 @@ npm run test-auth
  <li>Test: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-cloud-functions/blob/master/inputDataTrigger/index.test.js</li>
 </ul>
  
- **Deploy, run, observe function logs via simulator**
-<pre><code>sudo functions logs clear && functions deploy inputDataTriggerFn --trigger-bucket=gft-academy-fraud-dete
-ctor-input && functions call inputDataTriggerFn && functions logs read</code></pre></code></pre>
-
+ **Simulate triggering DataFlow job**
  
-**Deploy to GCP**
-<pre><code>TBD</code></pre></details>
+ ```
+sudo functions logs clear && \
+functions deploy triggerDataflowFn --trigger-bucket=${GCP_INPUT_BUCKET} && \
+functions call triggerDataflowFn && \
+functions logs read
+
+```
+ **Deploy function to cloud**
+
+- Enable API first: https://console.cloud.google.com/apis/library/cloudfunctions.googleapis.com
+
+```
+gcloud beta functions deploy triggerDataflowFn --trigger-bucket=${GCP_INPUT_BUCKET}
+```
 
 ## TODO
 - Use token based authentication inside cloud functions
