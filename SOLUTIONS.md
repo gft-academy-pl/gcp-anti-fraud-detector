@@ -63,6 +63,9 @@ cd gcp-anti-fraud-detector</code></pre>
 </code></pre>
 
 **Run on the DataFlow**
+
+- Enable API first: https://console.cloud.google.com/apis/library/dataflow.googleapis.com
+
 <pre><code>mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.WordCount \
       -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
