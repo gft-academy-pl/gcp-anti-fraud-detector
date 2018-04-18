@@ -290,4 +290,5 @@ gcloud beta functions deploy triggerDataflowFn --trigger-bucket=${GCP_INPUT_BUCK
 ```
 
 ## TODO
-- Use token based authentication inside cloud functions
+- Use https instead ssh in GIT
+- Use token based authentication inside cloud functions (done)
