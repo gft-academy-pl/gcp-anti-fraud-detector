@@ -288,6 +288,9 @@ functions logs read
 ```
 gcloud beta functions deploy triggerDataflowFn --trigger-bucket=${GCP_INPUT_BUCKET}
 ```
+</details>
+
+### Trigger sending email notifications with Cloud Function
 
 ## TODO
 - Use https instead ssh in GIT
