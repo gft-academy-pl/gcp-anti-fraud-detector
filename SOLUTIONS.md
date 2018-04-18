@@ -217,7 +217,7 @@ gcloud beta functions deploy helloworldFn --trigger-http
 
 </details>
 
-### Authorized calls to DataFlow API using Application Default Credentials
+### Authorized calls to DataFlow API
 
 **Docs**
 - https://developers.google.com/api-client-library/
@@ -242,7 +242,16 @@ npm install
 **Test API call with Application Default Credentials**
 
 ```
-npm run test-auth
+npm run test-auth-default
+```
+
+**Test API call with JWT**
+
+* Create Service Account https://console.cloud.google.com/iam-admin/serviceaccounts with Cloud Functions Admin, DataFlow Admin, Storage Viewer permissions and generate private key
+* Upload key to the gcp-anti-fraud-detector-cloud-functions project
+
+```
+npm run test-auth-jwt
 ```
 
 </details>
