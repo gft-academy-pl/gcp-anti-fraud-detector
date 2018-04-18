@@ -158,6 +158,8 @@ mvn clean compile exec:java \
 **Docs**
 - https://cloud.google.com/dataflow/docs/templates/executing-templates
 
+## Cloud Functions
+
 ### Getting started with Cloud Functions
 
 **Docs**
