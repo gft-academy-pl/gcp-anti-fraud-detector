@@ -1,5 +1,11 @@
 ![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/storage-highlight.png?raw=true)
 
+## AGENDA
+- describe storage theory
+- gsutil 
+- create buckets 
+- upload file 
+
 ## Storage 
  - for fraud detector data input
  - for fraud detector data output

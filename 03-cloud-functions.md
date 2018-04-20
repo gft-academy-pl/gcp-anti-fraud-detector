@@ -2,6 +2,13 @@
 
 ## Cloud Functions
 
+## AGENDA
+- cloud functions overview
+- enable api for dataflow
+- service account setup
+- function deployment (do not describe the js code) 
+
+
 ### Getting started with Cloud Functions
 
 **Docs**
