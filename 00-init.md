@@ -4,18 +4,19 @@
 
 ```
 # GOOGLE_CLOUD_PROJECT
-export GCP_INPUT_BUCKET=gs://gft-academy-fraud-detector-input/
-export GCP_OUTPUT_BUCKET=gs://gft-academy-fraud-detector-output/
+export GCP_INPUT_BUCKET=gs://gft-academy-fraud-detector-input-${LOGNAME}
+export GCP_OUTPUT_BUCKET=gs://gft-academy-fraud-detector-output-${LOGNAME}
 ```
 
-**GIT with github.com**
+**Fetch code**
 
-https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/ or use https method
-
-
-##TODO 
-- unique username in bucket name
-- https for git
-- clone the hole git project
-
+```
 git clone https://github.com/gft-academy-pl/gcp-anti-fraud-detector.git
+```
+
+**Generate configs**
+
+```
+TBD
+```
+
