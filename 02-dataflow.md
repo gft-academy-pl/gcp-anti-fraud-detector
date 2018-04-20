@@ -1,3 +1,5 @@
+![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/dataflow-highlight.png?raw=true)
+
 ## Anti Fraud ETL
 
 ### Getting started with DataFlow - bootstrap initial project
