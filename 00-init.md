@@ -1,4 +1,4 @@
-![GCP Logo](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/gft-academy.jpg)
+![GCP Logo](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/google-platform.png)
 
 ## Agenda
 
