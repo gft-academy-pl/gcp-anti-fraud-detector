@@ -1,9 +1,14 @@
-![GCP Logo](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/google-cloud-platform.png)
+
 
 ## Agenda
 
 - introduction to GCP
 - introduction to GCP shell and editor
+- brief project overview
+
+![GCP Logo](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/google-cloud-platform.png)
+
+![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/GFT%20Academy%20-%20anti%20fraud%20detector.png?raw=true)
 
 ## Init
 
