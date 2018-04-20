@@ -8,14 +8,28 @@
   * wi-fi
   * newest Chrome browser
 
-## Overview
+## Diagram
 
 ![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/GFT%20Academy%20-%20anti%20fraud%20detector.png?raw=true)
 
-## Documentation
+## Plan
 
-### Dataflow (detecting frauds)
-* https://cloud.google.com/dataflow/docs
-* https://en.wikipedia.org/wiki/Data_analysis_techniques_for_fraud_detection
-* https://arxiv.org/ftp/arxiv/papers/1009/1009.6119.pdf
+### Step 0 - Init
 
+https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/00-init.md
+
+### Step 1 - Storage
+
+[![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/storage-highlight.png?raw=true)](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/01-storage.md)
+
+### Step 2 - DataFlow
+
+![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/dataflow-highlight.png?raw=true)
+
+### Step 3 - Cloud Functions
+
+![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/cloud-functions-highlight.png?raw=true)
+
+### Step 3 - Notifications
+
+![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/notifications-functions-highlight.png?raw=true)
