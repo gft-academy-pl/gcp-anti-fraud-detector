@@ -30,6 +30,15 @@ https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/02-dataflo
 
 https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/03-cloud-functions.md
 
-### Step 4 - Notifications
+### Step 4 - Sendgrid - Email Notifications
 
 https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/04-email-notifications.md
+
+
+### Step 5 - Nexmo - SMS Notifications
+
+https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/05-sms-notifications.md
+
+### Step 6 - Testing
+
+https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/06-testing.md
