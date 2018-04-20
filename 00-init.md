@@ -25,6 +25,7 @@ export GCP_OUTPUT_BUCKET=gft-academy-fraud-detector-output-${LOGNAME}
 ```
 cd ~
 git clone https://github.com/gft-academy-pl/gcp-anti-fraud-detector.git
-pwd
+cd gcp-anti-fraud-detector
+ls
 ```
 
