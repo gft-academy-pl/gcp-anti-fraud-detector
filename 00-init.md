@@ -4,8 +4,8 @@
 
 ```
 # GOOGLE_CLOUD_PROJECT
-export GCP_INPUT_BUCKET=gs://gft-academy-fraud-detector-input-${LOGNAME}
-export GCP_OUTPUT_BUCKET=gs://gft-academy-fraud-detector-output-${LOGNAME}
+export GCP_INPUT_BUCKET=gft-academy-fraud-detector-input-${LOGNAME}
+export GCP_OUTPUT_BUCKET=gft-academy-fraud-detector-output-${LOGNAME}
 ```
 
 **Fetch code**
@@ -14,9 +14,10 @@ export GCP_OUTPUT_BUCKET=gs://gft-academy-fraud-detector-output-${LOGNAME}
 git clone https://github.com/gft-academy-pl/gcp-anti-fraud-detector.git
 ```
 
-**Generate configs**
+**Configure**
 
 ```
-TBD
+sed -i -- 's/__INPUT_BUCKET__/'"$GCP_INPUT_BUCKET"'/' ./cloud-functions/dataflow-notifications/config.json
+sed -i -- 's/__OUTPUT_BUCKET__/'"$GCP_OUTPUT_BUCKET"'/' ./cloud-functions/dataflow-notifications/config.json
 ```
 
