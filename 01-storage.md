@@ -1,10 +1,12 @@
 ![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/storage-highlight.png?raw=true)
 
 ## Agenda
-- Cloud Storage (describe storage theory)
+- Cloud Storage
 - gsutil 
-- create buckets 
-- upload file 
+- Storage - exercises
+  - Create bucket
+  - Upload file 
+
 
 ## Cloud Storage
 
