@@ -1,0 +1,4 @@
+{
+  "INPUT_BUCKET": "__INPUT_BUCKET__",
+  "OUTPUT_BUCKET": "__OUTPUT_BUCKET__"
+}
