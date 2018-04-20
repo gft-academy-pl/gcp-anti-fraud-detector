@@ -10,25 +10,19 @@
 ## Anti Fraud ETL
 
 
-### Create own Pipeline to find the frauds ###
+### Pipeline to find the frauds ###
 
-
-<ul>
- <li>Source repository: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-data-dataflow</li>
- <li>Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-dataflow/blob/master/src/main/java/com/gft/academy/FraudDetector.java</li>
- <li>Test: https://github.com/gft-academy-pl/gcp-anti-fraud-detector-dataflow/blob/master/src/test/java/com/gft/academy/FraudDetectorTest.java</li>
-</ul>
-
-**Prepare**
+- Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/dataflow/detecting-frauds/src/main/java/com/gft/academy/FraudDetector.java
+- Test: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/dataflow/detecting-frauds/src/test/java/com/gft/academy/FraudDetectorTest.java
 
 ```
-cd ~ && \
-rm -rf gcp-anti-fraud-detector-dataflow && \
-git clone git@github.com:gft-academy-pl/gcp-anti-fraud-detector-dataflow.git && \
-cd gcp-anti-fraud-detector-dataflow
+cd ~/gcp-anti-fraud-detector/dataflow/detecting-frauds
 ```
-  
+ 
 **Run locally**
+
+- Input: public dataset
+- Output: local directory
 
 ```
 mvn clean compile exec:java \
@@ -41,13 +35,17 @@ mvn clean compile exec:java \
 
 Enable API first: https://console.cloud.google.com/apis/library/dataflow.googleapis.com
 
+- Input: public dataset
+- Output: output bucket
+
 ```
 mvn clean compile exec:java \
       -Dexec.mainClass=com.gft.academy.FraudDetector \
       -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
-      --inputFile=gs://gft-academy-fraud-detector-public-data/trades-small.csv \
-      --output=${GCP_OUTPUT_BUCKET}frauds \
-      --stagingLocation=${GCP_OUTPUT_BUCKET}frauds-staging --runner=DataflowRunner"
+      --inputFile=gs://${GCP_INPUT_BUCKET}/trades-small.csv \
+      --output=gs://${GCP_OUTPUT_BUCKET}/frauds \
+      --tempLocation=gs://${GCP_OUTPUT_BUCKET}/frauds-tmp \
+      --runner=DataflowRunner"
 ```
 
 ### Create job template ###
@@ -57,12 +55,10 @@ mvn clean compile exec:java \
 - https://cloud.google.com/dataflow/docs/templates/creating-templates
 - https://cloud.google.com/dataflow/docs/templates/executing-templates
 
-<details><summary><b>Answer</b></summary>
-
 ```
 mvn clean compile exec:java \
        -Dexec.mainClass=com.gft.academy.FraudDetector \
        -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
-       --templateLocation=${GCP_OUTPUT_BUCKET}templates/fraud-detector \
+       --templateLocation=gs://${GCP_OUTPUT_BUCKET}/templates/fraud-detector \
        --runner=DataflowRunner"
 ```
