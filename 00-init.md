@@ -26,10 +26,3 @@ export GCP_OUTPUT_BUCKET=gft-academy-fraud-detector-output-${LOGNAME}
 git clone https://github.com/gft-academy-pl/gcp-anti-fraud-detector.git
 ```
 
-**Configure**
-
-```
-sed -i -- 's/__INPUT_BUCKET__/'"$GCP_INPUT_BUCKET"'/' ./cloud-functions/dataflow-notifications/config.json
-sed -i -- 's/__OUTPUT_BUCKET__/'"$GCP_OUTPUT_BUCKET"'/' ./cloud-functions/dataflow-notifications/config.json
-```
-
