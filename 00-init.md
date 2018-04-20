@@ -23,7 +23,8 @@ export GCP_OUTPUT_BUCKET=gft-academy-fraud-detector-output-${LOGNAME}
 **Fetch code**
 
 ```
-cd ~ && / 
+cd ~
 git clone https://github.com/gft-academy-pl/gcp-anti-fraud-detector.git
+pwd
 ```
 
