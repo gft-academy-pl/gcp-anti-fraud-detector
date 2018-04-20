@@ -40,3 +40,8 @@ mvn clean compile exec:java \
       --stagingLocation=${GCP_OUTPUT_BUCKET}wordcount-staging \
       --runner=DataflowRunner"
 ```
+
+### Execute job from custom template via web interface
+
+**Docs**
+- https://cloud.google.com/dataflow/docs/templates/executing-templates
