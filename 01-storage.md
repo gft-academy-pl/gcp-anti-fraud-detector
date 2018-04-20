@@ -18,8 +18,8 @@
 - bucket locations: https://cloud.google.com/storage/docs/bucket-locations
  
 ```
-gsutil mb -c regional -l europe-west3 ${GCP_INPUT_BUCKET}
-gsutil mb -c regional -l europe-west3 ${GCP_OUTPUT_BUCKET}
+gsutil mb -c regional -l europe-west3 gs://${GCP_INPUT_BUCKET}
+gsutil mb -c regional -l europe-west3 gs://${GCP_OUTPUT_BUCKET}
 ```
 
 ### Upload sample data
@@ -28,5 +28,5 @@ gsutil mb -c regional -l europe-west3 ${GCP_OUTPUT_BUCKET}
 - gsutils cp: https://cloud.google.com/storage/docs/gsutil/commands/cp
 
 ```
-gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv ${GCP_INPUT_BUCKET}
+gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://${GCP_INPUT_BUCKET}
 ```
