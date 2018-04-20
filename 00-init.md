@@ -1,3 +1,8 @@
+## Agenda
+
+- introduction to GCP
+- introduction to GCP shell and editor
+
 ## Init
 
 **Global variables**
