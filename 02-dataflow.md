@@ -9,6 +9,14 @@
 
 ## DataFlow - pipeline to find the frauds
 
+**Docs**
+-- https://cloud.google.com/dataflow/docs
+-- https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-maven
+- https://cloud.google.com/dataflow/docs/templates/overview
+- https://cloud.google.com/dataflow/docs/templates/creating-templates
+- https://cloud.google.com/dataflow/docs/templates/executing-templates
+
+**Code**
 - Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/dataflow/detecting-frauds/src/main/java/com/gft/academy/FraudDetector.java
 - Test: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/dataflow/detecting-frauds/src/test/java/com/gft/academy/FraudDetectorTest.java
 
@@ -45,12 +53,7 @@ mvn clean compile exec:java \
       --runner=DataflowRunner"
 ```
 
-### Create job template ###
-
-**Docs**
-- https://cloud.google.com/dataflow/docs/templates/overview
-- https://cloud.google.com/dataflow/docs/templates/creating-templates
-- https://cloud.google.com/dataflow/docs/templates/executing-templates
+**Create job template**
 
 ```
 mvn clean compile exec:java \
