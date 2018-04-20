@@ -3,6 +3,5 @@
 ### Trigger sending SMS notifications with Cloud Function
 
 ## Agenda
-- create send grid account
-- create token
-- deploy function
+- quickly descibe the goal (just to show that it can be integrated with multiple sytems) 
+- depoloy function 
