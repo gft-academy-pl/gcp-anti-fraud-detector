@@ -1,5 +1,7 @@
 # gcp-anti-fraud-detector
 
+![LOGO](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/gft-academy.png)
+
 ## Prerequisites
 
 * Active Google Cloud Platform account: https://cloud.google.com/free/ (you need to attach Credit Card in order to use trial period)
