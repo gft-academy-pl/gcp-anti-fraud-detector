@@ -1,3 +1,5 @@
+![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/storage-highlight.png?raw=true)
+
 ## Storage 
  - for fraud detector data input
  - for fraud detector data output
