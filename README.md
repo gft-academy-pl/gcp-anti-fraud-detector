@@ -20,16 +20,16 @@ https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/00-init.md
 
 ### Step 1 - Storage
 
-[Solutions](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/01-storage.md)
+https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/01-storage.md
 
 ### Step 2 - DataFlow
 
-[Solutions](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/02-dataflow.md)
+https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/02-dataflow.md
 
 ### Step 3 - Cloud Functions
 
-[Solutions](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/03-cloud-functions.md)
+https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/03-cloud-functions.md
 
 ### Step 4 - Notifications
 
-[Solutions](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/04-email-notifications.md)
+https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/04-email-notifications.md
