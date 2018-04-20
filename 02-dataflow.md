@@ -24,6 +24,13 @@ mvn archetype:generate \
 cd gcp-anti-fraud-detector
 ```
 
+## THEORY
+descibe the project code 
+- what is dataflow
+- what is apache beam
+- quickly describe project structure
+- global concept of our fround detection
+
 **Run locally**
 
 ```
