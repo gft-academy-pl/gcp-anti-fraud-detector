@@ -8,14 +8,16 @@
 
 ## Cloud Storage
 
-### The idea
+### Concept & Purpose
 
 Google Cloud Storage allows world-wide storage and retrieval of any amount of data at any time. You can use Google Cloud Storage for a range of scenarios including serving website content, storing data for archival and disaster recovery, or distributing large data objects to users via direct download ([Google documentation]).
 
-
+### Storage types
+![alt text][storage_types]
 
 
 [Google documentation]: https://cloud.google.com/storage/docs/
+[storage_types]: https://cloud.google.com/images/storage/storage-classes-desktop.svg "https://cloud.google.com/images/storage/storage-classes-desktop.svg"
 
 ## Storage 
  - for fraud detector data input
