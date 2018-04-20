@@ -10,8 +10,8 @@
 ## DataFlow - pipeline to find the frauds
 
 **Docs**
--- https://cloud.google.com/dataflow/docs
--- https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-maven
+- https://cloud.google.com/dataflow/docs
+- https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-maven
 - https://cloud.google.com/dataflow/docs/templates/overview
 - https://cloud.google.com/dataflow/docs/templates/creating-templates
 - https://cloud.google.com/dataflow/docs/templates/executing-templates
