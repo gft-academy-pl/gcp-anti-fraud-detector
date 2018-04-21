@@ -13,7 +13,7 @@
 
 **Code**
 
-- Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/cloud-functions/dataflow-notifications/index.js
+- Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/cloud-functions/email-notifications/index.js
 
 ```
 cd ~/gcp-anti-fraud-detector/cloud-functions/email-notifications
