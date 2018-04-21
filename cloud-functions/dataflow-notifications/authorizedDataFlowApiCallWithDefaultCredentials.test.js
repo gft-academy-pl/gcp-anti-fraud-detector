@@ -1,8 +1,10 @@
-const assert = require('assert');
+const index = require('./index');
 const {
 	google
 } = require('googleapis');
 const path = require('path');
+const fs = require("fs");
+const CONFIG = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json')));
 
 describe('Dataflow API', function() {
 
@@ -15,17 +17,11 @@ describe('Dataflow API', function() {
 			]
 		});
 		const projectId = await google.auth.getDefaultProjectId();
-		const result = await google.dataflow({
-				version: 'v1b3',
-				auth: auth
-			})
-			.projects.jobs.list({
-				projectId: projectId
-			});
-
-		//then
-		console.log('JOB names: ', result.data.jobs.map(el => el.name).join(','));
-		assert.ok(result.data.jobs.length > 0);
+		const result = await index.createJob(auth, projectId, {
+			bucket: CONFIG.INPUT_BUCKET,
+			name: 'trades-small.csv'
+		});
+		console.log('Result: ', result.data);
 	})
 
 
