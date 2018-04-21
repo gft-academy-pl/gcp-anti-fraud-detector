@@ -16,7 +16,7 @@ cd ~/gcp-anti-fraud-detector/cloud-functions/dataflow-notifications
 npm install
 ```
 
-**Configure function**
+**Generate config.json**
 
 ```
  sed -i -- 's/__INPUT_BUCKET__/'"$GCP_INPUT_BUCKET"'/' ./config.json
@@ -33,7 +33,6 @@ npm run test-auth-default
 
 * Navigate to: https://console.cloud.google.com/iam-admin/serviceaccounts, select Project and create Service Account with "Dataflow Developer, Dataflow Viewer, Dataflow Worker, Storage Object Viewer" permissions and generate private key
 ![System Account](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/system-account.png)
-![System Account](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/roles.png)
 * Upload key (drag and drop via CloudShell) to `~/gcp-anti-fraud-detector/cloud-functions/dataflow-notifications` and rename it to `jwt.keys.json`
 
 ```
