@@ -11,6 +11,15 @@
   - Click Save to create the key.
   - SendGrid generates a new key. This is the only copy of the key so make sure to copy the key and save it for later.
 
+**Code**
+
+- Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/cloud-functions/dataflow-notifications/index.js
+
+```
+cd ~/gcp-anti-fraud-detector/cloud-functions/email-notifications
+npm install
+```
+
 **Global variables**
 
 ```
@@ -31,8 +40,6 @@ sed -i 's/__GCP_TO_EMAIL__/'"$GCP_TO_EMAIL"'/g' config.json
 **Deploy function**
 
 ```
-cd ~/gcp-anti-fraud-detector/cloud-functions/email-notifications
-npm install
 gcloud beta functions deploy sendEmail --trigger-bucket=gs://${GCP_OUTPUT_BUCKET}
 ```
 
