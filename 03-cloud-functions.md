@@ -22,6 +22,13 @@ npm install
 npm run test-auth-default
 ```
 
+**Configure function**
+
+```
+ sed -i -- 's/__INPUT_BUCKET__/'"$GCP_INPUT_BUCKET"'/' ./config.json
+ sed -i -- 's/__OUTPUT_BUCKET__/'"$GCP_OUTPUT_BUCKET"'/' ./config.json
+ ```
+
 **Test API call with JWT**
 
 * Navigate to: https://console.cloud.google.com/iam-admin/serviceaccounts, select Project and create Service Account  with Cloud Functions Admin, DataFlow Admin, Storage Viewer permissions and generate private key
