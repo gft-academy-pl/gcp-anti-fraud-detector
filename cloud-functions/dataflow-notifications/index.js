@@ -23,11 +23,15 @@ exports.triggerDataflowFn = (event) => {
 			.then((projectId) => {
 				console.log(`Succesfully authorized with JWT key, project: ${projectId}`);
 
-				exports.createJob(auth, projectId, file);
+				return exports.createJob(auth, projectId, file);
 
-			}, (err) => null);
+			}, (err) => {
+				console.log('Error during obtaining projectId',err);
+			});
 
-	}, (err) => null);
+	}, (err) => {
+		console.log('Error during authorization', err);
+	});
 
 };
 
@@ -41,15 +45,18 @@ exports.createJob = function(auth, projectId, file) {
 			resource: {
 				parameters: {
 					inputFile: `gs://${file.bucket}/${file.name}`,
+					tempLocation: `gs://${CONFIG.OUTPUT_BUCKET}/frauds-tmp`,
 					output: `gs://${CONFIG.OUTPUT_BUCKET}/frauds-${file.name}`
 				},
 				jobName: 'fraud-detector-input-data-triggering-dataflow-' + new Date().toISOString(),
 				gcsPath: `gs://${CONFIG.OUTPUT_BUCKET}/templates/fraud-detector`
 			}
 		}).then((result) => {
-
+			
 			console.log('OK');
 			return result;
 
-		}, (err) => null);
+		}, (err) => {
+			console.log('Error during executing call', err);
+		});
 }
