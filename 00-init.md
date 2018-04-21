@@ -20,7 +20,7 @@ export GCP_INPUT_BUCKET=gft-academy-fraud-detector-input-${LOGNAME}
 export GCP_OUTPUT_BUCKET=gft-academy-fraud-detector-output-${LOGNAME}
 ```
 
-**Fetch code**
+**Clone repository**
 
 ```
 cd ~

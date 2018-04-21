@@ -7,7 +7,7 @@
 * Active Google Cloud Platform account: https://cloud.google.com/free/ (you need to attach Credit Card in order to use trial period)
 * Some Java and Maven knowledge
 * Own laptop with:
-  * wi-fi
+  * wi-fi (access will be provided)
   * newest Chrome browser
 
 ## Plan
