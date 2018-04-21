@@ -1,4 +1,4 @@
 {
-  "INPUT_BUCKET": "gft-academy-fraud-detector-input-kospiotr",
-  "OUTPUT_BUCKET": "gft-academy-fraud-detector-output-kospiotr"
+  "INPUT_BUCKET": "__INPUT_BUCKET__",
+  "OUTPUT_BUCKET": "__OUTPUT_BUCKET__"
 }
