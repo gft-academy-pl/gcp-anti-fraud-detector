@@ -1,51 +1,24 @@
-const {
-	google
-} = require('googleapis');
 const fs = require("fs");
 const path = require('path');
+const sgMail = require('@sendgrid/mail');
 
 const CONFIG = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json')));
 
-exports.triggerDataflowFn = (event) => {
+sgMail.setApiKey(CONFIG.GCP_SENDGRID_API_KEY);
 
-	console.log('Processing incomming event');
+exports.sendEmail = function(event){
+  const file = event.data;
 
-	const file = event.data;
+  const msg = {
+    to: CONFIG.GCP_TO_EMAIL,
+    from: CONFIG.GCP_FROM_EMAIL,
+    subject: 'Fraud was detected!',
+    text: `All details can be found in gs://${file.bucket}/${file.name}`,
+    html: `All details can be found in <strong>gs://${file.bucket}/${file.name}</strong>`,
+  };
+    
 
-	return google.auth.getClient({
-		keyFile: path.join(__dirname, 'jwt.keys.json'),
-		scopes: [
-			'https://www.googleapis.com/auth/cloud-platform',
-			'https://www.googleapis.com/auth/userinfo.email'
-		]
-	}).then((auth) => {
-		return google.auth.getDefaultProjectId()
-			.then((projectId) => {
-				console.log(`Succesfully authorized with JWT key, project: ${projectId}`);
-
-				return google.dataflow({
-						version: 'v1b3',
-						auth: auth
-					})
-					.projects.templates.create({
-						projectId: projectId,
-						resource: {
-							parameters: {
-								inputFile: `gs://${file.bucket}/${file.name}`,
-								output: `${CONFIG.OUTPUT_BUCKET}/frauds-${file.name}`
-							},
-							jobName: 'fraud-detector-input-data-triggering-dataflow-' + new Date().toISOString(),
-							gcsPath: CONFIG.GS_PATH
-						}
-					}).then((result) => {
-						
-						console.log('Result: ', result);
-						return result;
-						
-					}, (err) => console.log('Exception occurred while executing DataFlow job template', err.message));
-
-			}, (err) => console.log('Exception occurred while obtaining default projectId', err.message));
-
-	}, (err) => console.log('Exception occurred while obtaining credentials', err.message));
-
-};
+  sgMail.send(msg).then(function(result){
+    console.log(result);
+  });
+}
