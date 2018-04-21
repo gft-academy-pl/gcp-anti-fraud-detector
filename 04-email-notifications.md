@@ -2,12 +2,6 @@
 
 ### Trigger sending email notifications with Cloud Function
 
-## Agenda
-- create send grid account
-- init environment
-- create token
-- deploy function
-
 **Create SendGrid Account**
 
 **Global variables**
@@ -22,4 +16,15 @@ export GCP_TO_EMAIL=przemyslaw.juszkiewicz@gft.com
 **Generate config.json**
 
 ```
+sed -i 's/__GCP_SENDGRID_API_KEY__/'"$GCP_SENDGRID_API_KEY"'/g' config.json
+sed -i 's/__GCP_FROM_EMAIL__/'"$GCP_FROM_EMAIL"'/g' config.json
+sed -i 's/__GCP_TO_EMAIL__/'"$GCP_TO_EMAIL"'/g' config.json
+```
+
+**Deploy function**
+
+```
+cd ~/gcp-anti-fraud-detector/cloud-functions/email-notifications
+npm install
+gcloud beta functions deploy sendEmail --trigger-bucket=gs://${GCP_OUTPUT_BUCKET}
 ```

@@ -23,29 +23,33 @@ exports.triggerDataflowFn = (event) => {
 			.then((projectId) => {
 				console.log(`Succesfully authorized with JWT key, project: ${projectId}`);
 
-				return google.dataflow({
-						version: 'v1b3',
-						auth: auth
-					})
-					.projects.templates.create({
-						projectId: projectId,
-						resource: {
-							parameters: {
-								inputFile: `gs://${file.bucket}/${file.name}`,
-								output: `${CONFIG.OUTPUT_BUCKET}/frauds-${file.name}`
-							},
-							jobName: 'fraud-detector-input-data-triggering-dataflow-' + new Date().toISOString(),
-							gcsPath: CONFIG.GS_PATH
-						}
-					}).then((result) => {
-						
-						console.log('Result: ', result);
-						return result;
-						
-					}, (err) => console.log('Exception occurred while executing DataFlow job template', err.message));
+				exports.createJob(auth, projectId, file);
 
-			}, (err) => console.log('Exception occurred while obtaining default projectId', err.message));
+			}, (err) => null);
 
-	}, (err) => console.log('Exception occurred while obtaining credentials', err.message));
+	}, (err) => null);
 
 };
+
+exports.createJob = function(auth, projectId, file) {
+	return google.dataflow({
+			version: 'v1b3',
+			auth: auth
+		})
+		.projects.templates.create({
+			projectId: projectId,
+			resource: {
+				parameters: {
+					inputFile: `gs://${file.bucket}/${file.name}`,
+					output: `gs://${CONFIG.OUTPUT_BUCKET}/frauds-${file.name}`
+				},
+				jobName: 'fraud-detector-input-data-triggering-dataflow-' + new Date().toISOString(),
+				gcsPath: `gs://${CONFIG.OUTPUT_BUCKET}/templates/fraud-detector`
+			}
+		}).then((result) => {
+
+			console.log('OK');
+			return result;
+
+		}, (err) => null);
+}
