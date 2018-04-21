@@ -29,7 +29,7 @@ npm install
 npm run test-auth-default
 ```
 
-**Test API call with JWT**
+**Test API call with System Account via JWT**
 
 * Navigate to: https://console.cloud.google.com/iam-admin/serviceaccounts, select Project and create Service Account with "Dataflow Developer, Dataflow Viewer, Dataflow Worker, Storage Object Viewer" permissions and generate private key
 ![System Account](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/system-account.png)
