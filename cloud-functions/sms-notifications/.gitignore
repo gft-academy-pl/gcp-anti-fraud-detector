@@ -58,5 +58,3 @@ typings/
 .env
 
 *.iml
-jwt.keys.json
-config.json
