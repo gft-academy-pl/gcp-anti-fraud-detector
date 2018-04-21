@@ -16,18 +16,18 @@ cd ~/gcp-anti-fraud-detector/cloud-functions/dataflow-notifications
 npm install
 ```
 
-**Test API call with Application Default Credentials**
-
-```
-npm run test-auth-default
-```
-
 **Configure function**
 
 ```
  sed -i -- 's/__INPUT_BUCKET__/'"$GCP_INPUT_BUCKET"'/' ./config.json
  sed -i -- 's/__OUTPUT_BUCKET__/'"$GCP_OUTPUT_BUCKET"'/' ./config.json
  ```
+ 
+**Test API call with Application Default Credentials**
+
+```
+npm run test-auth-default
+```
 
 **Test API call with JWT**
 
