@@ -28,3 +28,11 @@ cd ~/gcp-anti-fraud-detector/cloud-functions/email-notifications
 npm install
 gcloud beta functions deploy sendEmail --trigger-bucket=gs://${GCP_OUTPUT_BUCKET}
 ```
+
+**Test function**
+
+```
+cd ~
+touch test-file.txt
+gsutil cp ~/test-file.txt gs://${GCP_OUTPUT_BUCKET}
+```
