@@ -14,11 +14,12 @@ exports.sendEmail = function(event){
     from: CONFIG.GCP_FROM_EMAIL,
     subject: 'Fraud was detected!',
     text: `All details can be found in gs://${file.bucket}/${file.name}`,
-    html: `All details can be found in <strong>gs://${file.bucket}/${file.name}</strong>`,
+    html: `All details can be found in <strong>gs://${file.bucket}/${file.name}</strong>`
   };
     
+  console.log(msg);
 
-  sgMail.send(msg).then(function(result){
+  return sgMail.send(msg).then(function(result){
     console.log(result);
   });
 }
