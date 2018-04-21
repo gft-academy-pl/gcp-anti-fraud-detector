@@ -3,6 +3,13 @@
 ### Trigger sending email notifications with Cloud Function
 
 **Create SendGrid Account**
+- Use the Google Cloud Launcher to sign up for the SendGrid Email service.
+- Create an API key:
+  - Sign in to Sendgrid and go to Settings > API Keys.
+  - Create an API key.
+  - Select the permissions for the key. At a minimum, the key will need Mail send permissions to send email.
+  - Click Save to create the key.
+  - SendGrid generates a new key. This is the only copy of the key so make sure to copy the key and save it for later.
 
 **Global variables**
 
@@ -27,4 +34,12 @@ sed -i 's/__GCP_TO_EMAIL__/'"$GCP_TO_EMAIL"'/g' config.json
 cd ~/gcp-anti-fraud-detector/cloud-functions/email-notifications
 npm install
 gcloud beta functions deploy sendEmail --trigger-bucket=gs://${GCP_OUTPUT_BUCKET}
+```
+
+**Test function**
+
+```
+cd ~
+touch test-file.txt
+gsutil cp ~/test-file.txt gs://${GCP_OUTPUT_BUCKET}
 ```
