@@ -6,5 +6,4 @@ Just delete dedicated project and...
 
 ## Navigation
 
-- [Previous Step](./05-sms-notifications.md)
-- [Next Step](./07-clean-up.md)
+- [Previous Step](./06-executing-pipeline.md)
