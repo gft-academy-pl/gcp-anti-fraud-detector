@@ -47,4 +47,4 @@ gsutil cp gs://gft-academy-fraud-detector-public-data/frauds-trades-small.txt gs
 ## Navigation
 
 - [Previous Step](./04-email-notifications.md)
-- [Next Step](./06-testing.md)
+- [Next Step](./06-executing-pipeline.md)
