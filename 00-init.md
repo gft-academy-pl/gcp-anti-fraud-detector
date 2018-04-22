@@ -1,16 +1,21 @@
-
+![GCP Logo](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/google-cloud-platform.png)
 
 ## Agenda
 
-- introduction to GCP
-- introduction to GCP shell and editor
-- brief project overview
+- Introduction to GCP
+- Introduction to GCP shell and editor
+- Project overview
+- Initialization / setup
 
-![GCP Logo](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/google-cloud-platform.png)
+## Introduction to GCP
+
+## Introduction to GCP shell and editor
+
+## Project overview
 
 ![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/GFT%20Academy%20-%20anti%20fraud%20detector.png?raw=true)
 
-## Init
+## Initialization / setup
 
 **Global variables**
 
