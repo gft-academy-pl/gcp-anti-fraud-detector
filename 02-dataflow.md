@@ -49,7 +49,7 @@ mvn clean compile exec:java \
       -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
       --inputFile=gs://${GCP_INPUT_BUCKET}/trades-small.csv \
       --output=gs://${GCP_OUTPUT_BUCKET}/frauds \
-      --tempLocation=gs://${GCP_OUTPUT_BUCKET}/frauds-tmp \
+      --tempLocation=gs://${GCP_WORKSPACE_BUCKET}/frauds-tmp \
       --runner=DataflowRunner"
 ```
 
@@ -60,7 +60,7 @@ mvn clean compile exec:java \
        -Dexec.mainClass=com.gft.academy.FraudDetector \
        -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
        --templateLocation=gs://${GCP_OUTPUT_BUCKET}/templates/fraud-detector \
-       --tempLocation=gs://${GCP_OUTPUT_BUCKET}/frauds-tmp \
+       --tempLocation=gs://${GCP_WORKSPACE_BUCKET}/frauds-tmp \
        --runner=DataflowRunner"
 ```
 
