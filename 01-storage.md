@@ -47,12 +47,12 @@ More info can be found in [gsutil documentation](https://cloud.google.com/storag
 ### Global variables
 
 ```
-# GOOGLE_CLOUD_PROJECT
-export GCP_INPUT_BUCKET=gft-academy-fraud-detector-input-${LOGNAME}
-export GCP_OUTPUT_BUCKET=gft-academy-fraud-detector-output-${LOGNAME}
+export GCP_INPUT_BUCKET=gft-academy-fraud-detector-input-${GOOGLE_CLOUD_PROJECT}
+export GCP_OUTPUT_BUCKET=gft-academy-fraud-detector-output-${GOOGLE_CLOUD_PROJECT}
+export GCP_OUTPUT_WORKSPACE=gft-academy-fraud-detector-workspace-${GOOGLE_CLOUD_PROJECT}
 ```
 
-### Create 2 buckets
+### Create 3 buckets
 
 **Docs**
 
@@ -62,6 +62,7 @@ export GCP_OUTPUT_BUCKET=gft-academy-fraud-detector-output-${LOGNAME}
 ```
 gsutil mb -c regional -l europe-west3 gs://${GCP_INPUT_BUCKET}
 gsutil mb -c regional -l europe-west3 gs://${GCP_OUTPUT_BUCKET}
+gsutil mb -c regional -l europe-west3 gs://${GCP_WORKSPACE_BUCKET}
 ```
 
 ### Upload sample data
