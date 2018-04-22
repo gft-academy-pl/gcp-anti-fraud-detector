@@ -16,10 +16,10 @@ exports.sendEmail = function(event){
     text: `All details can be found in gs://${file.bucket}/${file.name}`,
     html: `All details can be found in <strong>gs://${file.bucket}/${file.name}</strong>`
   };
-    
-  console.log(msg);
 
-  return sgMail.send(msg).then(function(result){
-    console.log(result);
+  return sgMail.send(msg).then( (result) => {
+    console.log(`Email succesfully sent: ${msg}`);
+  }, (err) => {
+    console.log(`Email cannot be send: ${msg} ${err}`);
   });
 }
