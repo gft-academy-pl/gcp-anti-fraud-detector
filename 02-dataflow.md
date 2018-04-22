@@ -29,6 +29,8 @@ Sample rule: Yield fraud when Client has many small trades (less then amount 10)
 
 ## Dataflow
 
+![Dataflow](https://beam.apache.org/images/logo_google_cloud.png)
+
 Cloud Dataflow is a fully-managed service for transforming and enriching data in stream (real time) and batch (historical) modes with equal reliability and expressiveness. 
 And with its serverless approach to resource provisioning and management, you have access to virtually limitless capacity to solve your biggest data processing challenges, while paying only for what you use.
 
@@ -42,7 +44,12 @@ Features:
 
 ## Apache Beam
 
-Docs: https://beam.apache.org
+![Logo](https://beam.apache.org/images/beam_logo_navbar.png)
+
+Features:
+- **Unified** - Use a single programming model for both batch and streaming use cases using Java, Python and other languages.
+- **Portable** - Execute pipelines on multiple execution environments like Dataflow, Spark, Flink, Apex, Gearpump or Local.
+- **Extensible** - Write and share new SDKs, IO connectors, and transformation libraries.
 
 Basic concepts:
 
@@ -51,7 +58,8 @@ Basic concepts:
 - **Transforms** - these are the operations in your pipeline. A transform takes a PCollection (or multiple PCollections) as input, performs an operation that you specify on each element in that collection, and produces a new output PCollection.
 - **Pipeline I/O** - Beam provides read and write transforms for a number of common data storage types, as well as allows you to create your own.
 - **Windowing** - subdivides a PCollection according to the timestamps of its individual elements. Transforms that aggregate multiple elements, such as GroupByKey and Combine, work implicitly on a per-window basis 
-- **Triggers** - when collecting and grouping data into windows, Beam uses triggers to determine when to emit the aggregated results of each window (referred to as a pane). If you use Beam’s default windowing configuration and default trigger, Beam outputs the aggregated result when it estimates all data has arrived, and discards all subsequent data for that window.
+- **Triggers** - when collecting and grouping data into windows, Beam uses triggers to determine when to emit the aggregated results of each window (referred to as a pane). If you use Beam’s default windowing configuration and default trigger, Beam outputs the aggregated result when it estimates all data has arrived, and discards all subsequent data for that wi
+
 
 ## Pipeline to find the frauds
 
