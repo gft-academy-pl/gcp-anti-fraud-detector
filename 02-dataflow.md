@@ -57,7 +57,7 @@ mvn clean compile exec:java \
        --runner=DataflowRunner"
 ```
 
-**Docs**
+## Documentation & Reference
 - https://cloud.google.com/dataflow/docs
 - https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-maven
 - https://cloud.google.com/dataflow/docs/templates/overview
