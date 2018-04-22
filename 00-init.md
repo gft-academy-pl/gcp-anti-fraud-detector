@@ -22,6 +22,12 @@ Google Cloud Shell provides you with command-line access to your cloud resources
 
 hen you start Cloud Shell, g1-small Google Compute Engine virtual machine running a Debian-based Linux operating system is provisioned for you. Cloud Shell instances are provisioned on a per-user, per-session basis. The instance persists while your Cloud Shell session is active and terminates after a hour of inactivity.
 
+### Cloud shell editor
+
+```
+cloudshell edit filename
+```
+
 ## Project overview
 
 ![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/GFT%20Academy%20-%20anti%20fraud%20detector.png?raw=true)
