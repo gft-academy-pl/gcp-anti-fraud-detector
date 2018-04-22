@@ -5,3 +5,7 @@
 ```
 gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://${GCP_INPUT_BUCKET}
 ```
+
+## Navigation
+
+- [Previous Step](./05-sms-notifications.md)
