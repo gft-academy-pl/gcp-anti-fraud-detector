@@ -22,12 +22,11 @@ describe('Dataflow API', function() {
 					bucket: CONFIG.INPUT_BUCKET,
 					name: 'trades-small.csv'
 				}).then(result => {
-					assert.ok(result);
-					console.log('result', result);
-					return result;
+					assert.equal(result.data.type, 'JOB_TYPE_BATCH1');
+					console.log('result', result.data);
 				});
 			});
-		}).then(res => done(), err => done());
+		}).then(done);
 	})
 
 
