@@ -1,12 +1,15 @@
 ![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/storage-highlight.png?raw=true)
 
 ## Agenda
+- Storage options
 - Cloud Storage
 - gsutil 
 - Storage - exercises
   - Create bucket
   - Upload file 
 
+## Storage options
+[storage_options]: https://cloud.google.com/images/storage/storage-classes-desktop.svg "https://cloud.google.com/images/storage/storage-classes-desktop.svg"
 
 ## Cloud Storage
 
