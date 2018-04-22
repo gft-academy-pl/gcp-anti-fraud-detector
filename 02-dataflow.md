@@ -52,7 +52,7 @@ mvn clean compile exec:java \
 ```
 mvn clean compile exec:java \
        -Dexec.mainClass=com.gft.academy.FraudDetector \
-       -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \     
+       -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
        --region=europe-west1 \
        --templateLocation=gs://${GCP_WORKSPACE_BUCKET}/templates/fraud-detector \
        --tempLocation=gs://${GCP_WORKSPACE_BUCKET}/frauds-tmp \
