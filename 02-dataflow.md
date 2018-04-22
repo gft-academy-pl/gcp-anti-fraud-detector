@@ -7,6 +7,22 @@
 - quickly describe project structure
 - descibe the project code 
 
+## Our fraud detector
+
+Sample trade input file:
+
+```
+BS,Yotz,25c92654-aac9-4ef0-a532-d1df1612326f,Interactive Brokers LLC,Rabo Securities USA Inc.,57,PAB,Africa,54.98,37.34,3171.20,607.92,Active,41570605,248090018,1880621363,1604158196,2018-04-09,2018-04-10,7a2cc935-eb5c-4be4-b4c0-281d91efed21,2018-04-10T00:00
+SS,Zoonder,41f01509-4e8c-448d-abe3-3f725a7634de,Mizuho Securities USA LLC,Cantor Fitzgerald & Co.,7,CDF,Africa,67.32,231.40,702.64,147.40,Correction,351217176,1717896528,794008364,603265844,2018-04-09,2018-04-10,a08e0c40-6fbe-457c-b363-715b514fdc2e,2018-04-10T00:01:26
+SS,LiveZ,69cdc3d5-a4f4-4c06-82a3-dfdda3fafabf,Credit Suisse Securities (USA) LLC,Phillip Capital Inc.,6,JMD,Africa,99.97,186.77,786.59,367.04,Correction,56954968,179793288,458087528,2127570952,2018-04-09,2018-04-10,a5876150-a04e-496e-81b3-dfd81df0874f,2018-04-10T00:02:52
+BS,Eayo,8732eee6-5714-4fa6-8f37-6b4693b64afb,Term Commodities Inc.,Dorman Trading L.L.C.,49,TZS,Africa,18.65,397.78,1311.63,354.96,Correction,1003755216,427232961,1412676551,713772300,2018-04-09,2018-04-10,c1ff8269-05a5-4c74-8cbd-17d3fb55f5e3,2018-04-10T00:04:19
+SL,Skinte,415aa7cb-0948-4e08-af61-bb287f9e7971,Credit Suisse Securities (USA) LLC,BNP Paribas Securities Corp.,32,BGN,Asia,39.85,130.06,1405.26,508.88,Inactive,556105325,1096460217,437062855,136211935,2018-04-09,2018-04-10,0d1da855-87e8-4c3d-9bd3-da42a6f5b0d9,2018-04-10T00:05:45
+BS,Yakijo,095cc2dd-629a-477a-b883-56f1e0d39f3d,HSBC Securities (USA) Inc.,Rand Financial Services Inc.,8,TND,America,48.79,123.87,514.19,160.58,Correction,1613434408,144675993,1712279215,803879096,2018-04-09,2018-04-10,48027d71-a7b8-45ca-ad67-3e8d8d29a02b,2018-04-10T00:07:12
+SL,Centimia,23b44591-03e4-4b15-b70f-e7c0310b1d70,Wedbush Securities Inc.,EFL Futures Limited,88,MMK,Africa,84.96,2626.65,10103.13,2231.49,Inactive,163672733,752233789,1843180636,1249479966,2018-04-09,2018-04-10,30dc0091-edf1-4a3f-8317-e9ae171f43ab,2018-04-10T00:08:38
+```
+
+Sample rule: Yield fraud when Client has many small trades (less then amount 10) but the sum of them is very high (more than 100)
+
 ## DataFlow - pipeline to find the frauds
 
 **Code**
