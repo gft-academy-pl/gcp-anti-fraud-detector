@@ -109,5 +109,11 @@ gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://${GC
 - https://github.com/google/google-api-nodejs-client/#google-apis-nodejs-client
 - https://github.com/google/google-api-nodejs-client/#authentication-and-authorization
 - https://github.com/google/google-auth-library-nodejs#choosing-the-correct-credential-type-automatically
+
+
+## Navigation
+
+- [Previous Step](./02-dataflow.md)
+- [Next Step](./04-email-notifications.md)
 - http://google.github.io/google-api-nodejs-client/
 - http://google.github.io/google-api-nodejs-client/classes/_apis_dataflow_v1b3_.dataflow.html
