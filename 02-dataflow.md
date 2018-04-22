@@ -42,7 +42,7 @@ mvn clean compile exec:java \
       -Dexec.args="--project=${GOOGLE_CLOUD_PROJECT} \
       --inputFile=gs://${GCP_INPUT_BUCKET}/trades-small.csv \
       --output=gs://${GCP_OUTPUT_BUCKET}/frauds \
-      --region=europe-west1
+      --region=europe-west1 \
       --tempLocation=gs://${GCP_WORKSPACE_BUCKET}/frauds-tmp \
       --runner=DataflowRunner"
 ```
