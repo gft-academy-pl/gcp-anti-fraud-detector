@@ -41,9 +41,7 @@ gcloud beta functions deploy sendSms --trigger-bucket=gs://${GCP_OUTPUT_BUCKET}
 **Test function**
 
 ```
-cd ~
-touch test-file.txt
-gsutil cp ~/test-file.txt gs://${GCP_OUTPUT_BUCKET}
+gsutil cp gs://gft-academy-fraud-detector-public-data/frauds-trades-small.txt gs://${GCP_OUTPUT_BUCKET}
 ```
 
 ## Navigation
