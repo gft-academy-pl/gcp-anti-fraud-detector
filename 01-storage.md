@@ -72,3 +72,8 @@ gsutil mb -c regional -l europe-west3 gs://${GCP_OUTPUT_BUCKET}
 ```
 gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://${GCP_INPUT_BUCKET}
 ```
+
+## Navigation
+
+- [Previous Step](./00-init.md)
+- [Next Step](./02-dataflow.md)
