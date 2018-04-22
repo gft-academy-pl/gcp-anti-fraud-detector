@@ -44,6 +44,14 @@ More info can be found in [gsutil documentation](https://cloud.google.com/storag
  - for fraud detector data input
  - for fraud detector data output
 
+### Global variables
+
+```
+# GOOGLE_CLOUD_PROJECT
+export GCP_INPUT_BUCKET=gft-academy-fraud-detector-input-${LOGNAME}
+export GCP_OUTPUT_BUCKET=gft-academy-fraud-detector-output-${LOGNAME}
+```
+
 ### Create 2 buckets
 
 **Docs**
