@@ -23,7 +23,14 @@ SL,Centimia,23b44591-03e4-4b15-b70f-e7c0310b1d70,Wedbush Securities Inc.,EFL Fut
 
 Sample rule: Yield fraud when Client has many small trades (less then amount 10) but the sum of them is very high (more than 100)
 
+## Dataflow
+
+Cloud Dataflow is a fully-managed service for transforming and enriching data in stream (real time) and batch (historical) modes with equal reliability and expressiveness.
+
+![History](./assets/history.jpg)
+
 ## DataFlow - pipeline to find the frauds
+
 
 **Code**
 - Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/dataflow/detecting-frauds/src/main/java/com/gft/academy/FraudDetector.java
