@@ -3,8 +3,7 @@
 ## Agenda
 - Cloud functions
 - Service accounts
-- Enable api for dataflow
-- Service account setup
+- Dataflow notification / trigger
 - Function deployment (do not describe the js code) 
 
 ## Cloud Functions 
@@ -58,7 +57,7 @@ A service account is a special account that can be used by services and applicat
 
 https://cloud.google.com/compute/docs/access/service-accounts
 
-### Dataflow notification / trigger
+## Dataflow notification / trigger
 
 **Code**
 - Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/cloud-functions/dataflow-notifications/index.js
@@ -94,7 +93,7 @@ npm run test-auth-default
 npm run test-auth-jwt
 ```
 
-### Deploy function to the cloud
+## Deploy function
 
 - Enable API first: https://console.cloud.google.com/apis/library/cloudfunctions.googleapis.com
 
