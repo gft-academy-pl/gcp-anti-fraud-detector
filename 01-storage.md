@@ -9,6 +9,7 @@
   - Upload file 
 
 ## Storage options
+![alt text][storage_options]
 [storage_options]: https://cloud.google.com/images/storage/storage-classes-desktop.svg "https://cloud.google.com/images/storage/storage-classes-desktop.svg"
 
 ## Cloud Storage
@@ -19,7 +20,7 @@ Google Cloud Storage allows world-wide storage and retrieval of any amount of da
 
 Widely accessible online disk space with pricing dependent on type, frequency of use and volume of the data, which is usually used to host static content and store cloud computation results.
 
-### Storage types
+### Cloud Storage types
 ![alt text][storage_types]
 
 [Google documentation]: https://cloud.google.com/storage/docs/
