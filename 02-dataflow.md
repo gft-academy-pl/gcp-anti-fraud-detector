@@ -21,7 +21,7 @@ BS,Yakijo,095cc2dd-629a-477a-b883-56f1e0d39f3d,HSBC Securities (USA) Inc.,Rand F
 SL,Centimia,23b44591-03e4-4b15-b70f-e7c0310b1d70,Wedbush Securities Inc.,EFL Futures Limited,88,MMK,Africa,84.96,2626.65,10103.13,2231.49,Inactive,163672733,752233789,1843180636,1249479966,2018-04-09,2018-04-10,30dc0091-edf1-4a3f-8317-e9ae171f43ab,2018-04-10T00:08:38
 ```
 
-Sample rule: Yield fraud when Client has many small trades (less then amount 10) but the sum of them is very high (more than 100)
+Sample rule: Yield fraud when Client has many small trades (value less then 10) but the sum of them is very high (more than 100)
 
 ## History of distributed data processing
 
