@@ -1,12 +1,20 @@
 ![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/cloud-functions-highlight.png?raw=true)
 
 ## Agenda
-- Cloud functions overview
+- Cloud functions
 - Enable api for dataflow
 - Service account setup
 - Function deployment (do not describe the js code) 
 
-## Cloud Functions - Dataflow Notification
+## Cloud Functions 
+
+Google Cloud Functions is a serverless execution environment for building and connecting cloud services. With Cloud Functions you write simple, single-purpose functions that are attached to events emitted from your cloud infrastructure and services. Your Cloud Function is triggered when an event being watched is fired. Your code executes in a fully managed environment. There is no need to provision any infrastructure or worry about managing any servers.
+
+Cloud Functions are written in Javascript and execute in a Node.js v6.11.5 environment on Google Cloud Platform. You can take your Cloud Function and run it in any standard Node.js runtime which makes both portability and local testing a breeze.
+
+https://cloud.google.com/functions/docs/concepts/overview 
+
+### Dataflow notification / trigger
 
 **Code**
 - Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/cloud-functions/dataflow-notifications/index.js
