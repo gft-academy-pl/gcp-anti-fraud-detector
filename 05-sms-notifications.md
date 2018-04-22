@@ -35,7 +35,7 @@ sed -i 's/__GCP_NEXMO_TO__/'"$GCP_NEXMO_TO"'/g' config.json
 **Deploy function**
 
 ```
-gcloud beta functions deploy sendSms --region=europe-west3 --trigger-bucket=gs://${GCP_OUTPUT_BUCKET}
+gcloud beta functions deploy sendSms --trigger-bucket=gs://${GCP_OUTPUT_BUCKET}
 ```
 
 **Test function**
