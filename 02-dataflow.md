@@ -40,12 +40,18 @@ Features:
 - **Unified Programming Model** - Apache Beam SDK offers equally rich MapReduce-like operations, powerful data windowing, and fine-grained correctness control for streaming and batch data alike.
 - **Community-driven Innovation** - Developers wishing to extend the Cloud Dataflow programming model can fork and/or contribute to Apache Beam.
 
-Transformation
+## Apache Beam
 
+Docs: https://beam.apache.org
+
+Basic concepts:
+
+![Basic concepts](https://beam.apache.org/images/design-your-pipeline-linear.png)
 - **PCollections** - the PCollection abstraction represents a potentially distributed, multi-element data set, that acts as the pipeline's data. Beam transforms use PCollection objects as inputs and outputs.
 - **Transforms** - these are the operations in your pipeline. A transform takes a PCollection (or multiple PCollections) as input, performs an operation that you specify on each element in that collection, and produces a new output PCollection.
 - **Pipeline I/O** - Beam provides read and write transforms for a number of common data storage types, as well as allows you to create your own.
-
+- **Windowing** - 
+- **Triggers** - 
 
 ## DataFlow - pipeline to find the frauds
 
