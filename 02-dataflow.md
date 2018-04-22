@@ -32,7 +32,12 @@ Sample rule: Yield fraud when Client has many small trades (less then amount 10)
 
 
 
-Cloud Dataflow is a fully-managed service for transforming and enriching data in stream (real time) and batch (historical) modes with equal reliability and expressiveness.
+Cloud Dataflow is a fully-managed service for transforming and enriching data in stream (real time) and batch (historical) modes with equal reliability and expressiveness. 
+And with its serverless approach to resource provisioning and management, you have access to virtually limitless capacity to solve your biggest data processing challenges, while paying only for what you use.
+
+Features:
+- Automated Resource Managemen
+
 
 
 ## DataFlow - pipeline to find the frauds
