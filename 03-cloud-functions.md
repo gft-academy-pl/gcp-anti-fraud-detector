@@ -12,6 +12,21 @@ Google Cloud Functions is a serverless execution environment for building and co
 
 Cloud Functions are written in Javascript and execute in a Node.js v6.11.5 environment on Google Cloud Platform. You can take your Cloud Function and run it in any standard Node.js runtime which makes both portability and local testing a breeze.
 
+**Serverless**
+
+Cloud Functions removes the work of managing servers, configuring software, updating frameworks, and patching operating systems. The software and infrastructure are fully managed by Google so that you just add code. Furthermore, provisioning of resources happens automatically in response to events. This means that a function can scale from a few invocations a day to many millions of invocations without any work from you.
+
+**Events**
+- HTTP—invoke functions directly via HTTP requests
+- Cloud Storage
+- Cloud Pub/Sub
+- Firebase (DB, Storage, Analytics, Auth)
+
+**Trigger**
+- HTTP:	--trigger-http
+- Google Cloud Storage:	--trigger-bucket [BUCKET NAME]
+- Google Cloud Pub/Sub:	--trigger-topic [TOPIC NAME]
+
 https://cloud.google.com/functions/docs/concepts/overview 
 
 ### Dataflow notification / trigger
@@ -49,7 +64,7 @@ npm run test-auth-default
 npm run test-auth-jwt
 ```
 
-**Deploy function to cloud**
+### Deploy function to the cloud
 
 - Enable API first: https://console.cloud.google.com/apis/library/cloudfunctions.googleapis.com
 
