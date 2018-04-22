@@ -34,6 +34,10 @@ cloudshell edit filename
 
 ## Initialization / setup
 
+**Create dedicated project
+
+In order to easier clean resources create dedicated project and switch to it after creation.
+
 **Clone repository**
 
 ```
