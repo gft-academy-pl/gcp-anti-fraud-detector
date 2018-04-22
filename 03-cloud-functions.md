@@ -91,7 +91,7 @@ npm run test-auth-jwt
 - Enable API first: https://console.cloud.google.com/apis/library/cloudfunctions.googleapis.com
 
 ```
-gcloud beta functions deploy triggerDataflowFn --trigger-bucket=gs://${GCP_INPUT_BUCKET}
+gcloud beta functions deploy triggerDataflowFn --region=europe-west3 --trigger-bucket=gs://${GCP_INPUT_BUCKET}
 ```
 
 **Test**
