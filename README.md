@@ -32,11 +32,14 @@ https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/03-cloud-f
 
 https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/04-email-notifications.md
 
-
 ### Step 5 - Nexmo - SMS Notifications
 
 https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/05-sms-notifications.md
 
-### Step 6 - Testing
+### Step 6 - Executing pipeline
 
-https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/06-testing.md
+https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/06-executing-pipeline.md
+
+### Step 7 - Clean up
+
+https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/07-clean-up.md
