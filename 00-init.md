@@ -26,3 +26,6 @@ cd gcp-anti-fraud-detector
 ls
 ```
 
+## Next
+
+[GO](./01-storage.md)
