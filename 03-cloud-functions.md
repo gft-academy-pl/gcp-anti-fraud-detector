@@ -73,6 +73,7 @@ npm install
 sed -i 's/__INPUT_BUCKET__/'"$GCP_INPUT_BUCKET"'/' ./config.json
 sed -i 's/__OUTPUT_BUCKET__/'"$GCP_OUTPUT_BUCKET"'/' ./config.json
 sed -i 's/__WORKSPACE_BUCKET__/'"$GCP_WORKSPACE_BUCKET"'/' ./config.json
+cat config.json
  ```
  
 **Test API call with Application Default Credentials**
