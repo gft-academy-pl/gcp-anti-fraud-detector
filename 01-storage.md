@@ -53,11 +53,6 @@ export GCP_WORKSPACE_BUCKET=gft-academy-fraud-detector-workspace-${GOOGLE_CLOUD_
 ```
 
 ### Create 3 buckets
-
-**Docs**
-
-- gsutils mb: https://cloud.google.com/storage/docs/gsutil/commands/mb 
-- bucket locations: https://cloud.google.com/storage/docs/bucket-locations
  
 ```
 gsutil mb -c regional -l europe-west3 gs://${GCP_INPUT_BUCKET}
@@ -67,12 +62,14 @@ gsutil mb -c regional -l europe-west3 gs://${GCP_WORKSPACE_BUCKET}
 
 ### Upload sample data
 
-**Docs**
-- gsutils cp: https://cloud.google.com/storage/docs/gsutil/commands/cp
-
 ```
 gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://${GCP_INPUT_BUCKET}
 ```
+
+## Documentation & Resources
+- gsutils mb: https://cloud.google.com/storage/docs/gsutil/commands/mb 
+- bucket locations: https://cloud.google.com/storage/docs/bucket-locations
+- gsutils cp: https://cloud.google.com/storage/docs/gsutil/commands/cp
 
 ## Navigation
 
