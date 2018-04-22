@@ -2,6 +2,7 @@
 
 ## Agenda
 - Cloud functions
+- Service accounts
 - Enable api for dataflow
 - Service account setup
 - Function deployment (do not describe the js code) 
@@ -50,6 +51,12 @@ Background functions are invoked at least once. This is because of asynchronous 
 To make sure that your function behaves correctly on retried execution attempts, you should make it idempotent by implementing it so that an event results in the desired results (and side effects) even if it is delivered multiple times. In the case of HTTP functions, this also means returning the desired value even if the caller retries calls to the HTTP function endpoint.
 
 https://cloud.google.com/functions/docs/concepts/overview 
+
+## Service accounts
+
+A service account is a special account that can be used by services and applications running on your Google Compute Engine instance to interact with other Google Cloud Platform APIs. Applications can use service account credentials to authorize themselves to a set of APIs and perform actions within the permissions granted to the service account and virtual machine instance. In addition, you can create firewall rules that allow or deny traffic to and from instances based on the service account that owns the instances.
+
+https://cloud.google.com/compute/docs/access/service-accounts
 
 ### Dataflow notification / trigger
 
