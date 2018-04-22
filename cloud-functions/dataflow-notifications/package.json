@@ -4,15 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-auth-default": "mocha authorizedDataFlowApiCallWithDefaultCredentials.test.js",
-    "test-auth-jwt": "mocha authorizedDataFlowApiCallWithJWT.test.js"
+    "test-auth-default": "node authorizedDataFlowApiCallWithDefaultCredentials.test.js",
+    "test-auth-jwt": "node authorizedDataFlowApiCallWithJWT.test.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "googleapis": "^28.1.0"
-  },
-  "devDependencies": {
-    "mocha": "^5.1.0"
   }
 }
