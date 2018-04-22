@@ -18,8 +18,8 @@ exports.sendEmail = function(event){
   };
 
   return sgMail.send(msg).then( (result) => {
-    console.log(`Email succesfully sent: ${msg}`);
+    console.log('Email succesfully sent', msg);
   }, (err) => {
-    console.log(`Email cannot be send: ${msg} ${err}`);
+    console.log('Email cannot be send', msg, err);
   });
 }
