@@ -63,3 +63,8 @@ mvn clean compile exec:java \
        --tempLocation=gs://${GCP_OUTPUT_BUCKET}/frauds-tmp \
        --runner=DataflowRunner"
 ```
+
+## Navigation
+
+- [Previous Step](./01-storage.md)
+- [Next Step](./03-cloud-functions.md)
