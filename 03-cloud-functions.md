@@ -1,10 +1,10 @@
 ![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/cloud-functions-highlight.png?raw=true)
 
 ## Agenda
-- cloud functions overview
-- enable api for dataflow
-- service account setup
-- function deployment (do not describe the js code) 
+- Cloud functions overview
+- Enable api for dataflow
+- Service account setup
+- Function deployment (do not describe the js code) 
 
 ## Cloud Functions - Dataflow Notification
 
