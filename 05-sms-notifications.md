@@ -45,3 +45,8 @@ cd ~
 touch test-file.txt
 gsutil cp ~/test-file.txt gs://${GCP_OUTPUT_BUCKET}
 ```
+
+## Navigation
+
+- [Previous Step](./04-email-notifications.md)
+- [Next Step](./06-testing.md)
