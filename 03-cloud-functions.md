@@ -66,6 +66,7 @@ npm install
 ```
  sed -i 's/__INPUT_BUCKET__/'"$GCP_INPUT_BUCKET"'/' ./config.json
  sed -i 's/__OUTPUT_BUCKET__/'"$GCP_OUTPUT_BUCKET"'/' ./config.json
+ sed -i 's/__WORKSPACE_BUCKET__/'"$GCP_WORKSPACE_BUCKET"'/' ./config.json
  ```
  
 **Test API call with Application Default Credentials**
@@ -100,7 +101,7 @@ gcloud beta functions deploy triggerDataflowFn --region=europe-west3 --trigger-b
 gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://${GCP_INPUT_BUCKET}
 ```
 
-**Docs**
+## Documentation & Resources
 - https://cloud.google.com/functions/docs/
 - https://shinesolutions.com/2017/03/23/triggering-dataflow-pipelines-with-cloud-functions/ - with templates
 - https://cloud.google.com/blog/big-data/2016/04/scheduling-dataflow-pipelines-using-app-engine-cron-service-or-cloud-functions - with spawning processess
