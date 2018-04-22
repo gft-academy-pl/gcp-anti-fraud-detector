@@ -26,6 +26,6 @@ cd gcp-anti-fraud-detector
 ls
 ```
 
-## Next
+## Navigation
 
-[GO](./01-storage.md)
+- [Next Step](./01-storage.md)
