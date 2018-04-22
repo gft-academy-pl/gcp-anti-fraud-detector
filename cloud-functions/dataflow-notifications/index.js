@@ -26,37 +26,42 @@ exports.triggerDataflowFn = (event) => {
 				return exports.createJob(auth, projectId, file);
 
 			}, (err) => {
-				console.log('Error during obtaining projectId',err);
+				console.log('Error during obtaining projectId', err);
+				return err;
 			});
 
 	}, (err) => {
 		console.log('Error during authorization', err);
+		return err;
 	});
 
 };
 
 exports.createJob = function(auth, projectId, file) {
+	const params = {
+		projectId: projectId,
+		resource: {
+			parameters: {
+				inputFile: `gs://${file.bucket}/${file.name}`,
+				tempLocation: `gs://${CONFIG.WORKSPACE_BUCKET}/frauds-tmp`,
+				output: `gs://${CONFIG.OUTPUT_BUCKET}/frauds-${file.name}`
+			},
+			jobName: 'fraud-detector-input-data-triggering-dataflow-' + new Date().toISOString(),
+			gcsPath: `gs://${CONFIG.WORKSPACE_BUCKET}/templates/fraud-detector`
+		}
+	};
+	console.log('Requesting params', params);
 	return google.dataflow({
 			version: 'v1b3',
 			auth: auth
 		})
-		.projects.templates.create({
-			projectId: projectId,
-			resource: {
-				parameters: {
-					inputFile: `gs://${file.bucket}/${file.name}`,
-					tempLocation: `gs://${CONFIG.WORKSPACE_BUCKET}/frauds-tmp`,
-					output: `gs://${CONFIG.OUTPUT_BUCKET}/frauds-${file.name}`
-				},
-				jobName: 'fraud-detector-input-data-triggering-dataflow-' + new Date().toISOString(),
-				gcsPath: `gs://${CONFIG.WORKSPACE_BUCKET}/templates/fraud-detector`
-			}
-		}).then((result) => {
-			
+		.projects.templates.create(params).then((result) => {
+
 			console.log('OK');
 			return result;
 
 		}, (err) => {
 			console.log('Error during executing call', err);
+			return err;
 		});
 }
