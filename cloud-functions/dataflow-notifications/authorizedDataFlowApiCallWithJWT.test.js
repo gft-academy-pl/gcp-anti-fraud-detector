@@ -23,7 +23,7 @@ describe('Dataflow API', function() {
 					bucket: CONFIG.INPUT_BUCKET,
 					name: 'trades-small.csv'
 				}).then(result => {
-					assert.equal(result.data.type, 'JOB_TYPE_BATCH1');
+					assert.equal(result.data.type, 'JOB_TYPE_BATCH');
 					console.log('result', result.data);
 				});
 			});
