@@ -25,6 +25,7 @@ describe('Dataflow API', function() {
 				}).then(result => {
 					assert.equal(result.data.type, 'JOB_TYPE_BATCH');
 					console.log('result', result.data);
+					return result.data;
 				});
 			});
 		}).then(done);
