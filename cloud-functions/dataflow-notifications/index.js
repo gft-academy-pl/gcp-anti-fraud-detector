@@ -45,7 +45,6 @@ exports.createJob = function(auth, projectId, file) {
 			resource: {
 				parameters: {
 					inputFile: `gs://${file.bucket}/${file.name}`,
-					region: 'europe-west1',
 					tempLocation: `gs://${CONFIG.WORKSPACE_BUCKET}/frauds-tmp`,
 					output: `gs://${CONFIG.OUTPUT_BUCKET}/frauds-${file.name}`
 				},
