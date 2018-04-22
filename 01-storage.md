@@ -49,7 +49,7 @@ More info can be found in [gsutil documentation](https://cloud.google.com/storag
 ```
 export GCP_INPUT_BUCKET=gft-academy-fraud-detector-input-${GOOGLE_CLOUD_PROJECT}
 export GCP_OUTPUT_BUCKET=gft-academy-fraud-detector-output-${GOOGLE_CLOUD_PROJECT}
-export GCP_OUTPUT_WORKSPACE=gft-academy-fraud-detector-workspace-${GOOGLE_CLOUD_PROJECT}
+export GCP_WORKSPACE_BUCKET=gft-academy-fraud-detector-workspace-${GOOGLE_CLOUD_PROJECT}
 ```
 
 ### Create 3 buckets
