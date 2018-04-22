@@ -45,11 +45,11 @@ exports.createJob = function(auth, projectId, file) {
 			resource: {
 				parameters: {
 					inputFile: `gs://${file.bucket}/${file.name}`,
-					tempLocation: `gs://${CONFIG.OUTPUT_BUCKET}/frauds-tmp`,
+					tempLocation: `gs://${CONFIG.WORKSPACE_BUCKET}/frauds-tmp`,
 					output: `gs://${CONFIG.OUTPUT_BUCKET}/frauds-${file.name}`
 				},
 				jobName: 'fraud-detector-input-data-triggering-dataflow-' + new Date().toISOString(),
-				gcsPath: `gs://${CONFIG.OUTPUT_BUCKET}/templates/fraud-detector`
+				gcsPath: `gs://${CONFIG.WORKSPACE_BUCKET}/templates/fraud-detector`
 			}
 		}).then((result) => {
 			
