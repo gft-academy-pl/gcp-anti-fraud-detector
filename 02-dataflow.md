@@ -23,7 +23,7 @@ SL,Centimia,23b44591-03e4-4b15-b70f-e7c0310b1d70,Wedbush Securities Inc.,EFL Fut
 
 Sample rule: Yield fraud when Client has many small trades (less then amount 10) but the sum of them is very high (more than 100)
 
-## History
+## History of distributed data processing
 
 [![History](./assets/history.jpg)](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/history.jpg)
 
