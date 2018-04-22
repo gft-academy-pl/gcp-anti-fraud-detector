@@ -25,7 +25,7 @@ Sample rule: Yield fraud when Client has many small trades (less then amount 10)
 
 ## History
 
-![History](./assets/history.jpg)
+[![History](./assets/history.jpg)](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/history.jpg)
 
 ## Dataflow
 
