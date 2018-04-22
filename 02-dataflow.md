@@ -59,6 +59,8 @@ mvn clean compile exec:java \
        --runner=DataflowRunner"
 ```
 
+NPE issue: https://issues.apache.org/jira/browse/BEAM-2400 but the template is created.
+
 ## Documentation & Resources
 - https://cloud.google.com/dataflow/docs
 - https://cloud.google.com/dataflow/docs/quickstarts/quickstart-java-maven
