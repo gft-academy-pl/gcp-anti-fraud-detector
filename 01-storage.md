@@ -1,12 +1,17 @@
 ![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/storage-highlight.png?raw=true)
 
 ## Agenda
+- Storage options
 - Cloud Storage
 - gsutil 
 - Storage - exercises
   - Create bucket
   - Upload file 
 
+## Storage options
+![alt text][storage_options]
+
+[storage_options]: https://cloud.google.com/images/storage-options/flowchart.svg "https://cloud.google.com/images/storage-options/flowchart.svg"
 
 ## Cloud Storage
 
@@ -14,10 +19,9 @@
 
 Google Cloud Storage allows world-wide storage and retrieval of any amount of data at any time. You can use Google Cloud Storage for a range of scenarios including serving website content, storing data for archival and disaster recovery, or distributing large data objects to users via direct download ([Google documentation]).
 
-**TL;DR;**
 Widely accessible online disk space with pricing dependent on type, frequency of use and volume of the data, which is usually used to host static content and store cloud computation results.
 
-### Storage types
+### Cloud Storage types
 ![alt text][storage_types]
 
 [Google documentation]: https://cloud.google.com/storage/docs/
@@ -39,6 +43,14 @@ More info can be found in [gsutil documentation](https://cloud.google.com/storag
 ## Storage - exercises
  - for fraud detector data input
  - for fraud detector data output
+
+### Global variables
+
+```
+# GOOGLE_CLOUD_PROJECT
+export GCP_INPUT_BUCKET=gft-academy-fraud-detector-input-${LOGNAME}
+export GCP_OUTPUT_BUCKET=gft-academy-fraud-detector-output-${LOGNAME}
+```
 
 ### Create 2 buckets
 

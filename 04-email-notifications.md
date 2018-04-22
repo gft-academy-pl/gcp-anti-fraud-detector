@@ -40,7 +40,7 @@ sed -i 's/__GCP_TO_EMAIL__/'"$GCP_TO_EMAIL"'/g' config.json
 **Deploy function**
 
 ```
-gcloud beta functions deploy sendEmail --trigger-bucket=gs://${GCP_OUTPUT_BUCKET}
+gcloud beta functions deploy sendEmail --region=europe-west3 --trigger-bucket=gs://${GCP_OUTPUT_BUCKET}
 ```
 
 **Test function**
