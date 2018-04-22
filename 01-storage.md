@@ -10,6 +10,7 @@
 
 ## Storage options
 ![alt text][storage_options]
+
 [storage_options]: https://cloud.google.com/images/storage/storage-classes-desktop.svg "https://cloud.google.com/images/storage/storage-classes-desktop.svg"
 
 ## Cloud Storage
