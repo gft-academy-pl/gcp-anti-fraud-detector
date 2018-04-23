@@ -82,7 +82,7 @@ cat config.json
 npm run test-auth-default
 ```
 
-##Call API with System Account via JWT##
+**Call API with System Account via JWT**
 
 ```
 # Create service account
