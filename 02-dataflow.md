@@ -27,6 +27,8 @@ Sample rule: Yield fraud when Client has many small trades (value less then 10) 
 
 [![History](./assets/history.jpg)](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/history.jpg)
 
+> Currently, processes over 20 petabytes of data per day through an average of 100,000 MapReduce jobs spread across its massive computing clusters. The average MapReduce job ran across approximately 400 machines in September 2007, crunching approximately 11,000 machine years in a single month.
+
 ## Dataflow
 
 ![Dataflow](https://beam.apache.org/images/logo_google_cloud.png)
