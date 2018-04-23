@@ -57,6 +57,14 @@ A service account is a special account that can be used by services and applicat
 
 https://cloud.google.com/compute/docs/access/service-accounts
 
+```
+# List service accounts
+gcloud iam service-accounts list
+
+# Create service account
+gcloud iam service-accounts create service-gft-academy-${GOOGLE_CLOUD_PROJECT} --display-name "GFT Academy ${GOOGLE_CLOUD_PROJECT}"
+```
+
 ## Dataflow notification / trigger
 
 **Code**
