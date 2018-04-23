@@ -58,11 +58,36 @@ A service account is a special account that can be used by services and applicat
 https://cloud.google.com/compute/docs/access/service-accounts
 
 ```
+# Create service account
+gcloud iam service-accounts create service-gft-academy-fraud --display-name "GFT Academy Fraud"
+
 # List service accounts
 gcloud iam service-accounts list
 
-# Create service account
-gcloud iam service-accounts create service-gft-academy-${GOOGLE_CLOUD_PROJECT} --display-name "GFT Academy ${GOOGLE_CLOUD_PROJECT}"
+# Generate key
+gcloud iam service-accounts keys create \
+    ~/gcp-anti-fraud-detector/cloud-functions/dataflow-notifications/jwt.keys.json \
+    --iam-account service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
+
+# List keys
+gcloud iam service-accounts keys list \
+    --iam-account service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
+
+# Add service account roles
+gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
+    --member serviceAccount:service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/dataflow.viewer
+
+gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
+    --member serviceAccount:service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/dataflow.developer
+	
+gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
+    --member serviceAccount:service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/dataflow.worker
+	
+gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
+    --member serviceAccount:service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/dataflow.admin
+	
+gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
+    --member serviceAccount:service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/storage.objectViewer
 ```
 
 ## Dataflow notification / trigger
