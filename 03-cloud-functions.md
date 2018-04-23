@@ -102,12 +102,6 @@ npm run test-auth-jwt
 gcloud beta functions deploy triggerDataflowFn --trigger-bucket=gs://${GCP_INPUT_BUCKET}
 ```
 
-**Test**
-
-```
-gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://${GCP_INPUT_BUCKET}
-```
-
 ## Documentation & Resources
 - https://cloud.google.com/functions/docs/
 - https://shinesolutions.com/2017/03/23/triggering-dataflow-pipelines-with-cloud-functions/ - with templates
