@@ -22,7 +22,7 @@ npm install
 
 **Global variables**
 
-https://www.cncf.io/blog/2018/03/16/cncf-announces-ckad-exam/
+https://storage.googleapis.com/gft-academy-fraud-detector-public-data/secrets.txt - active only during training
 
 ```
 # GOOGLE_CLOUD_PROJECT
