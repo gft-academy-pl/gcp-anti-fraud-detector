@@ -38,12 +38,6 @@ sed -i 's/__GCP_NEXMO_TO__/'"$GCP_NEXMO_TO"'/g' config.json
 gcloud beta functions deploy sendSms --trigger-bucket=gs://${GCP_OUTPUT_BUCKET}
 ```
 
-**Test function**
-
-```
-gsutil cp gs://gft-academy-fraud-detector-public-data/frauds-trades-small.txt gs://${GCP_OUTPUT_BUCKET}
-```
-
 ## Navigation
 
 - [Previous Step](./04-email-notifications.md)
