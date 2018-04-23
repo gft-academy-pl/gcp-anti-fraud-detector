@@ -19,8 +19,8 @@ npm install
 
 ```
 # GOOGLE_CLOUD_PROJECT
-export GCP_NEXMO_KEY=[secret from sendgrid]
-export GCP_NEXMO_SECRET=[secret from sendgrid]
+export GCP_NEXMO_KEY=[key from nexmo]
+export GCP_NEXMO_SECRET=[secret from nexmo]
 export GCP_NEXMO_TO=[your phone number like: +48509123456]
 ```
 
