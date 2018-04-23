@@ -117,7 +117,7 @@ gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
 gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
     --member serviceAccount:service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/storage.objectViewer
 ```
-# Test with JWT
+## Test with JWT
 
 ```
 npm run test-auth-jwt
