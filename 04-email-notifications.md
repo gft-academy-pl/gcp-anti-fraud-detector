@@ -22,6 +22,8 @@ npm install
 
 **Global variables**
 
+https://www.cncf.io/blog/2018/03/16/cncf-announces-ckad-exam/
+
 ```
 # GOOGLE_CLOUD_PROJECT
 export GCP_SENDGRID_API_KEY=[sendgrid API Key]
