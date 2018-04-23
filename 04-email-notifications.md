@@ -43,12 +43,6 @@ sed -i 's/__GCP_TO_EMAIL__/'"$GCP_TO_EMAIL"'/g' config.json
 gcloud beta functions deploy sendEmail --trigger-bucket=gs://${GCP_OUTPUT_BUCKET}
 ```
 
-**Test function**
-
-```
-gsutil cp gs://gft-academy-fraud-detector-public-data/frauds-trades-small.txt gs://${GCP_OUTPUT_BUCKET}
-```
-
 ## Navigation
 
 - [Previous Step](./03-cloud-functions.md)
