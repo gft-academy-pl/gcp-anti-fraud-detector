@@ -2,9 +2,13 @@
 
 ### Executing pipeline
 
+![VolumenUp](https://i.stack.imgur.com/M5leu.png)
+
 ```
 gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://${GCP_INPUT_BUCKET}
 ```
+
+
 
 ## Navigation
 
