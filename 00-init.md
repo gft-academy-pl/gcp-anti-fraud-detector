@@ -38,6 +38,10 @@ cloudshell edit filename
 
 In order to easier clean resources create dedicated project and switch to it after creation.
 
+**Clean up**
+
+After the workshop is over, please delete the project as your acount will be still billed for the bucket usage.
+
 **Clone repository**
 
 ```
