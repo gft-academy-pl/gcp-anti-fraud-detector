@@ -24,9 +24,9 @@ npm install
 
 ```
 # GOOGLE_CLOUD_PROJECT
-export GCP_SENDGRID_API_KEY=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
-export GCP_FROM_EMAIL=przemyslaw.juszkiewicz@gmail.com
-export GCP_TO_EMAIL=przemyslaw.juszkiewicz@gmail.com
+export GCP_SENDGRID_API_KEY=[sendgrid API Key]
+export GCP_FROM_EMAIL=[from email address]
+export GCP_TO_EMAIL=[to email address]
 ```
 
 **Generate config.json**
