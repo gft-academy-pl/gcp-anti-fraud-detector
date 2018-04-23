@@ -57,6 +57,34 @@ A service account is a special account that can be used by services and applicat
 
 https://cloud.google.com/compute/docs/access/service-accounts
 
+## Dataflow notification / trigger
+
+**Code**
+- Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/cloud-functions/dataflow-notifications/index.js
+
+```
+cd ~/gcp-anti-fraud-detector/cloud-functions/dataflow-notifications
+npm install
+```
+
+**Generate config.json**
+
+```
+sed -i 's/__INPUT_BUCKET__/'"$GCP_INPUT_BUCKET"'/' ./config.json
+sed -i 's/__OUTPUT_BUCKET__/'"$GCP_OUTPUT_BUCKET"'/' ./config.json
+sed -i 's/__WORKSPACE_BUCKET__/'"$GCP_WORKSPACE_BUCKET"'/' ./config.json
+cat config.json
+ ```
+ 
+**Test API call with Application Default Credentials**
+
+```
+npm run test-auth-default
+```
+
+**Test API call with System Account via JWT**
+
+
 ```
 # Create service account
 gcloud iam service-accounts create service-gft-academy-fraud --display-name "GFT Academy Fraud"
@@ -89,39 +117,7 @@ gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
 gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
     --member serviceAccount:service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/storage.objectViewer
 ```
-
-## Dataflow notification / trigger
-
-**Code**
-- Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/cloud-functions/dataflow-notifications/index.js
-
-```
-cd ~/gcp-anti-fraud-detector/cloud-functions/dataflow-notifications
-npm install
-```
-
-**Generate config.json**
-
-```
-sed -i 's/__INPUT_BUCKET__/'"$GCP_INPUT_BUCKET"'/' ./config.json
-sed -i 's/__OUTPUT_BUCKET__/'"$GCP_OUTPUT_BUCKET"'/' ./config.json
-sed -i 's/__WORKSPACE_BUCKET__/'"$GCP_WORKSPACE_BUCKET"'/' ./config.json
-cat config.json
- ```
- 
-**Test API call with Application Default Credentials**
-
-```
-npm run test-auth-default
-```
-
-**Test API call with System Account via JWT**
-
-* Navigate to: https://console.cloud.google.com/iam-admin/serviceaccounts, select Project and create Service Account with "Dataflow Admin, Dataflow Developer, Dataflow Viewer, Dataflow Worker, Storage Object Viewer" permissions and generate private key
-
-![System Account](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/system-account.png)
-
-* Upload key (drag and drop via CloudShell) to `~/gcp-anti-fraud-detector/cloud-functions/dataflow-notifications` and rename it to `jwt.keys.json`
+# Test with JWT
 
 ```
 npm run test-auth-jwt
