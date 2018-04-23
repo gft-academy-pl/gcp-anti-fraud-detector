@@ -3,7 +3,7 @@
 ### Trigger sending email notifications with Cloud Function
 
 **Create SendGrid Account**
-- Use the Google Cloud Launcher to sign up for the SendGrid Email service.
+- Sign up to SendGrid: https://app.sendgrid.com/signup.
 - Create an API key:
   - Sign in to Sendgrid and go to Settings > API Keys.
   - Create an API key.
