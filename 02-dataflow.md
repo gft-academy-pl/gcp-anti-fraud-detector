@@ -62,8 +62,12 @@ Features:
 ![Unified](https://beam.apache.org/images/beam_architecture.png)
 - **Portable** - Execute pipelines on multiple execution environments like Dataflow, Spark, Flink, Apex, Gearpump or Local.
 <center>
-![Apex](https://beam.apache.org/images/logo_apex.png) ![Flink](https://beam.apache.org/images/logo_flink.png) ![Spark](https://beam.apache.org/images/logo_spark.png) ![Dataflow](https://beam.apache.org/images/logo_google_cloud.png) ![Gearpump](https://beam.apache.org/images/logo_gearpump.png)
- </center>
+ ![Apex](https://beam.apache.org/images/logo_apex.png)
+ ![Flink](https://beam.apache.org/images/logo_flink.png)
+ ![Spark](https://beam.apache.org/images/logo_spark.png) 
+ ![Dataflow](https://beam.apache.org/images/logo_google_cloud.png) 
+ ![Gearpump](https://beam.apache.org/images/logo_gearpump.png)
+</center>
 - **Extensible** - Write and share new SDKs, IO connectors, and transformation libraries.
 
 ## Pipeline to find the frauds
