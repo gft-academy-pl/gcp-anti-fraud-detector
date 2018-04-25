@@ -48,11 +48,6 @@ Features:
 
 ![Logo](https://beam.apache.org/images/beam_logo_navbar.png)
 
-Features:
-- **Unified** - Use a single programming model for both batch and streaming use cases using Java, Python and other languages.
-- **Portable** - Execute pipelines on multiple execution environments like Dataflow, Spark, Flink, Apex, Gearpump or Local.
-- **Extensible** - Write and share new SDKs, IO connectors, and transformation libraries.
-
 Basic concepts:
 
 ![Basic concepts](https://beam.apache.org/images/design-your-pipeline-linear.png)
@@ -62,6 +57,12 @@ Basic concepts:
 - **Windowing** - subdivides a PCollection according to the timestamps of its individual elements. Transforms that aggregate multiple elements, such as GroupByKey and Combine, work implicitly on a per-window basis 
 - **Triggers** - when collecting and grouping data into windows, Beam uses triggers to determine when to emit the aggregated results of each window (referred to as a pane). If you use Beam’s default windowing configuration and default trigger, Beam outputs the aggregated result when it estimates all data has arrived, and discards all subsequent data for that wi
 
+Features:
+- **Unified** - Use a single programming model for both batch and streaming use cases using Java, Python and other languages.
+![Unified](https://beam.apache.org/images/beam_architecture.png)
+- **Portable** - Execute pipelines on multiple execution environments like Dataflow, Spark, Flink, Apex, Gearpump or Local.
+![Apex](https://beam.apache.org/images/logo_apex.png)
+- **Extensible** - Write and share new SDKs, IO connectors, and transformation libraries.
 
 ## Pipeline to find the frauds
 
