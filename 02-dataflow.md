@@ -104,6 +104,8 @@ mvn clean compile exec:java \
 
 **Create job template**
 
+So far we were executing jobs on the Dataflow. We need to create a job template and deploy (stage) it with all dependencies to the available for the Dataflow place - workspace bucket. It can be then created via web or GCP API.
+
 ```
 mvn clean compile exec:java \
        -Dexec.mainClass=com.gft.academy.FraudDetector \
