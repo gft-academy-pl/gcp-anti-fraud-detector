@@ -54,7 +54,9 @@ Basic concepts:
 - **Transforms** - these are the operations in your pipeline. A transform takes a PCollection (or multiple PCollections) as input, performs an operation that you specify on each element in that collection, and produces a new output PCollection.
 - **Pipeline I/O** - Beam provides read and write transforms for a number of common data storage types, as well as allows you to create your own.
 - **Windowing** - subdivides a PCollection according to the timestamps of its individual elements. Transforms that aggregate multiple elements, such as GroupByKey and Combine, work implicitly on a per-window basis 
-- **Triggers** - when collecting and grouping data into windows, Beam uses triggers to determine when to emit the aggregated results of each window (referred to as a pane). If you use Beam’s default windowing configuration and default trigger, Beam outputs the aggregated result when it estimates all data has arrived, and discards all subsequent data for that wi
+- **Triggers** - when collecting and grouping data into windows, Beam uses triggers to determine when to emit the aggregated results of each window (referred to as a pane). If you use Beam’s default windowing configuration and default trigger, Beam outputs the aggregated result when it estimates all data has arrived, and discards all subsequent data for that window
+
+![Beam flow](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/beam-flow.png)
 
 Pipeline operations:
 - **Branching pipelines**
