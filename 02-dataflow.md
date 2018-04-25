@@ -49,13 +49,20 @@ Features:
 ![Logo](https://beam.apache.org/images/beam_logo_navbar.png)
 
 Basic concepts:
-
 ![Basic concepts](https://beam.apache.org/images/design-your-pipeline-linear.png)
 - **PCollections** - the PCollection abstraction represents a potentially distributed, multi-element data set, that acts as the pipeline's data. Beam transforms use PCollection objects as inputs and outputs.
 - **Transforms** - these are the operations in your pipeline. A transform takes a PCollection (or multiple PCollections) as input, performs an operation that you specify on each element in that collection, and produces a new output PCollection.
 - **Pipeline I/O** - Beam provides read and write transforms for a number of common data storage types, as well as allows you to create your own.
 - **Windowing** - subdivides a PCollection according to the timestamps of its individual elements. Transforms that aggregate multiple elements, such as GroupByKey and Combine, work implicitly on a per-window basis 
 - **Triggers** - when collecting and grouping data into windows, Beam uses triggers to determine when to emit the aggregated results of each window (referred to as a pane). If you use Beam’s default windowing configuration and default trigger, Beam outputs the aggregated result when it estimates all data has arrived, and discards all subsequent data for that wi
+
+Pipeline operations:
+- **Branching pipelines**
+![Branching](https://beam.apache.org/images/design-your-pipeline-multiple-pcollections.png)
+- **Merge pipelines**
+![Merge pipelines](https://beam.apache.org/images/design-your-pipeline-flatten.png)
+- **Multiple sources**
+![Multiple sources](https://beam.apache.org/images/design-your-pipeline-join.png)
 
 Features:
 - **Unified** - Use a single programming model for both batch and streaming use cases using Java, Python and other languages.
