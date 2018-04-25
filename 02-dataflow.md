@@ -58,10 +58,15 @@ Basic concepts:
 
 Pipeline operations:
 - **Branching pipelines**
+
 ![Branching](https://beam.apache.org/images/design-your-pipeline-multiple-pcollections.png)
+
 - **Merge pipelines**
+
 ![Merge pipelines](https://beam.apache.org/images/design-your-pipeline-flatten.png)
+
 - **Multiple sources**
+
 ![Multiple sources](https://beam.apache.org/images/design-your-pipeline-join.png)
 
 Features:
