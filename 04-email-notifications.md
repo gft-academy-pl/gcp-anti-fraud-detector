@@ -22,7 +22,7 @@ npm install
 
 **Global variables**
 
-https://storage.googleapis.com/gft-academy-fraud-detector-public-data/secrets.txt - active only during training
+https://storage.googleapis.com/gft-academy-fraud-detector-public-data/secrets.txt?cache=false - active only during training
 
 ```
 # GOOGLE_CLOUD_PROJECT
