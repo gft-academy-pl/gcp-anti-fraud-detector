@@ -61,7 +61,7 @@ Features:
 - **Unified** - Use a single programming model for both batch and streaming use cases using Java, Python and other languages.
 ![Unified](https://beam.apache.org/images/beam_architecture.png)
 - **Portable** - Execute pipelines on multiple execution environments like Dataflow, Spark, Flink, Apex, Gearpump or Local.
-![Apex](https://beam.apache.org/images/logo_apex.png)
+![Apex](https://beam.apache.org/images/logo_apex.png) ![Flink](https://beam.apache.org/images/logo_flink.png)
 - **Extensible** - Write and share new SDKs, IO connectors, and transformation libraries.
 
 ## Pipeline to find the frauds
