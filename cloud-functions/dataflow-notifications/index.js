@@ -24,7 +24,6 @@ exports.triggerDataflowFn = (event) => {
 				console.log(`Succesfully authorized with JWT key, project: ${projectId}`);
 
 				return exports.createJob(auth, projectId, file);
-
 			}, (err) => {
 				console.log('Error during obtaining projectId', err);
 				return err;
@@ -56,10 +55,8 @@ exports.createJob = function(auth, projectId, file) {
 			auth: auth
 		})
 		.projects.templates.create(params).then((result) => {
-
 			console.log('OK');
 			return result;
-
 		}, (err) => {
 			console.log('Error during executing call', err);
 			return err;
