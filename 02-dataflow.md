@@ -38,9 +38,7 @@ And with its serverless approach to resource provisioning and management, you ha
 
 Features:
 - **Automated Resource Management** - Cloud Dataflow automates provisioning and management of processing resources to minimize latency and maximize utilization; no more spinning up instances by hand or reserving them.
-- **Dynamic Work Rebalancing** - Automated and optimized work partitioning dynamically rebalances lagging work. No need to chase down “hot keys” or pre-process your input data.
-!(Without rebalancing)[https://cloud.google.com/blog/big-data/2016/05/images/146343344435295/table-3.png]
-!(With rebalancing)[https://cloud.google.com/blog/big-data/2016/05/images/146343344435295/table-4.png]
+- **Dynamic Work Rebalancing** - Automated and optimized work partitioning dynamically rebalances lagging work. No need to chase down “hot keys” or pre-process your input data. !(Without rebalancing)[https://cloud.google.com/blog/big-data/2016/05/images/146343344435295/table-3.png] !(With rebalancing)[https://cloud.google.com/blog/big-data/2016/05/images/146343344435295/table-4.png] 
 - **Reliable & Consistent Exactly-once Processing** - Provides built-in support for fault-tolerant execution that is consistent and correct regardless of data size, cluster size, processing pattern or pipeline complexity.
 - **Horizontal Auto-scaling** - Horizontal auto-scaling of worker resources for optimum throughput results in better overall price-to-performance.
 - **Unified Programming Model** - Apache Beam SDK offers equally rich MapReduce-like operations, powerful data windowing, and fine-grained correctness control for streaming and batch data alike.
