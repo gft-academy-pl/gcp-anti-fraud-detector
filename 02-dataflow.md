@@ -108,7 +108,7 @@ mvn clean compile exec:java \
  
 **Run on the DataFlow**
 
-Enable API in order to be able to operate on DataFlow. Go to API&Services, search for Dataflow, and click Enable button, or use this link: https://console.cloud.google.com/apis/library/dataflow.googleapis.com
+Enable API in order to be able to operate on DataFlow. Go to API&Services, search for Dataflow, and click Enable button, or use this link: https://console.cloud.google.com/apis/library/dataflow.googleapis.com. You can also do it from command line using `gcloud services enable dataflow.googleapis.com`.
 
 - Input: public dataset
 - Output: output bucket
