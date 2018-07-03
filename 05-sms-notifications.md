@@ -29,6 +29,7 @@ export GCP_NEXMO_TO=[your phone number like: +48509123456]
 sed -i 's/__GCP_NEXMO_KEY__/'"$GCP_NEXMO_KEY"'/g' config.json
 sed -i 's/__GCP_NEXMO_SECRET__/'"$GCP_NEXMO_SECRET"'/g' config.json
 sed -i 's/__GCP_NEXMO_TO__/'"$GCP_NEXMO_TO"'/g' config.json
+cat config.json
 ```
 
 **Deploy function**
