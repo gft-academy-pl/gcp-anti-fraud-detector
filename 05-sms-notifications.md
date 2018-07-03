@@ -17,7 +17,7 @@ npm install
 
 **Global variables**
 
-The assumption here is that you exported all 3 variables defined in the secrets file (details are in the previous [step](./04-email-notifications.md)).
+The assumption here is that you exported all 3 variables defined in the secrets file (details are in the [previous step](./04-email-notifications.md#global-variables)).
 ```
 # GOOGLE_CLOUD_PROJECT
 export GCP_NEXMO_TO=[your phone number like: +48509123456]
