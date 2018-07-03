@@ -22,11 +22,10 @@ npm install
 
 **Global variables**
 
-https://storage.googleapis.com/gft-academy-fraud-detector-public-data/secrets.txt?cache=false - active only during training
+https://storage.googleapis.com/gft-academy-fraud-detector-public-data/secrets.txt?cache=false - active only during training. Please export all 3 variables defined in the secrets file.
 
 ```
 # GOOGLE_CLOUD_PROJECT
-export GCP_SENDGRID_API_KEY=[sendgrid API Key]
 export GCP_FROM_EMAIL=[from email address]
 export GCP_TO_EMAIL=[to email address]
 ```
@@ -37,6 +36,7 @@ export GCP_TO_EMAIL=[to email address]
 sed -i 's/__GCP_SENDGRID_API_KEY__/'"$GCP_SENDGRID_API_KEY"'/g' config.json
 sed -i 's/__GCP_FROM_EMAIL__/'"$GCP_FROM_EMAIL"'/g' config.json
 sed -i 's/__GCP_TO_EMAIL__/'"$GCP_TO_EMAIL"'/g' config.json
+cat config.json
 ```
 
 **Deploy function**
