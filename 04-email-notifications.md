@@ -20,7 +20,7 @@ cd ~/gcp-anti-fraud-detector/cloud-functions/email-notifications
 npm install
 ```
 
-**Global variables<a id="global-varialbes"></a>**
+**Global variables**
 
 https://storage.googleapis.com/gft-academy-fraud-detector-public-data/secrets.txt?cache=false - active only during training. Please export all 3 variables defined in the secrets file.
 
